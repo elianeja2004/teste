@@ -1,0 +1,2074 @@
+---
+title: "Diretrizes para Prevenção de Lesão por Pressão"
+author: "Long Life Learnig"
+abstract: "Este relatório descreve o diretrizes operacionais padrão sobre Prevenção de Lesão por Pressão"
+date: "Última atualização em `r format (Sys.time(), '%d / %m / %Y às %H:%M horas.')`"
+output: 
+  prettydoc::html_pretty:
+    theme: leonids
+    highlight: github
+    toc: true
+    toc_depth: 3
+link-citations: TRUE
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+![](https://thumbs.gfycat.com/FloweryThornyAsianelephant-max-1mb.gif){.illustration
+style="top: 10px; right: 20px; position: absolute" width="80"}
+
+```{css didact, include = FALSE}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+</style>
+```
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(eval = TRUE,            # Avalia code chunk
+                      echo = FALSE,           # Aparece source code na saída
+                      include = TRUE,         # Inclui qualquer coisa code chunk na saída
+                      warning = FALSE,        # Aparece menssagem de avisos
+                      message = FALSE,        # Aparece mensagem de erro
+                      collapse = FALSE,        # Aparece saída de texto e source code em único code block
+                      cache = FALSE,          # Avalia o code chunk em cada compilação
+                      fig.pos = "H",          # Posição da figura
+                      fig.align = "center",   # Alinhamento da figura
+                      fig.height = 7,         # Tamanho da altura da figura
+                      fig.width = 12          # Tamanho do comprimento da figura
+                      )           
+
+
+```
+
+```{r pacotes}
+
+if (!require("pacman")) install.packages("pacman")
+
+pacman::p_load(pacman,      
+               magrittr, 
+               rio, 
+               tidyverse, 
+               ggpubr,
+               gridExtra,
+               readxl, 
+               openxlsx, 
+               writexl,
+               googlesheets4, 
+               tiff,
+               htmlwidgets,
+               googledrive,
+               lubridate,
+               ggmap, 
+               data.table, 
+               fst, 
+               kableExtra, 
+               Hmisc,
+               jsonlite, 
+               httr, 
+               highcharter, 
+               Quandl,
+               DT, 
+               ids, 
+               uuid, 
+               qrcode,
+               sampling,
+               knitr,
+               tinytex,
+               rcompanion, 
+               effectsize, 
+               rstatix,
+               dunn.test,
+               FSA,
+               ape,
+               usethis,
+               extrafont,
+               DiagrammeR)
+               
+```
+
+------------------------------------------------------------------------
+
+<DIV align="JUSTIFY">
+
+<P>
+
+<FONT face="Comic Sans MS">*Os idosos são mais suscetíveis a desenvolver
+LPP, devido às condições causadas pelo envelhecimento do ser humano,
+como rigidez do colágeno, diminuiçãoda espessura da pele e das fibras
+elásticas. Além da diminuição dos capilares da derme, redução do tecido
+adiposo subcutâneo nos membros, podendo ocasionar a desidratação da pele
+e diminuição dos suplementos sanguíneos onde são fatores predisponentes
+ao aparecimento de lesões.*
+
+</DIV>
+
+[Nursing care and pus in the elderly: a
+review](https://brazilianjournals.com/ojs/index.php/BRJD/article/view/35216/pdf)
+
+</DIV>
+
+# 1. Palavras chaves
+
+-   Lesão por pressão, prevenção, escala de Braden.
+
+# 2. Executantes
+
+-   Enfermagem;
+-   Fisioterapeuta;
+-   Nutrição;
+-   Médico.
+
+# 3. Setores
+
+-   Unidade de Internação;
+-   Unidade de Terapia Intensiva;
+-   Pronto Socorro;
+-   Centro Cirúrgico;
+-   Hemodinâmica;
+-   Telemedicina;
+-   Assistência Domiciliar;
+-   Hospital Virtual;
+-   Ambulatórios;
+-   Núcleos;
+-   Diagnósticos.
+
+# 4. Introdução
+
+<DIV align="JUSTIFY">
+
+<P>
+
+As [lesões por
+pressão](https://i0.wp.com/enfermagemilustrada.com/wp-content/uploads/2016/11/unstageable-slough-and-eschar-april-2016.jpg?fit=1500%2C1125&ssl=1)
+(LP) atingem em torno de 9% de todos os pacientes internados, sendo a
+maioria idosos, e cerca de 23% dos acamados que estão em tratamento
+residencial. Os idosos são as pessoas mais susceptíveis a desenvolver
+LP, devido às próprias [condições causadas pelo envelhecimento do corpo
+humano](https://lifestars.com.br/blog/wp-content/uploads/2020/09/envelhecer-compressed.jpg),
+como a diminuição da espessura da pele, das fibras elásticas e rigidez
+do colágeno, além da redução do tecido adiposo subcutâneo dos membros,
+diminuição de capilares da derme, que pode ocasionar a redução do
+suprimento sanguíneo e a desidratação da pele, os quais são fatores que
+predispõem ao surgimento das lesões.<BR> As lesões por pressão causam
+dano considerável aos pacientes, dificultando o processo de recuperação
+funcional, frequentemente causando dor e levando ao desenvolvimento de
+infecções graves, associadas a internações prolongadas, casos de sepse e
+mortalidade, além do impacto financeiro para as instituições e
+familiares.
+
+</DIV>
+
+## 4.1. Definição
+
+<DIV align="JUSTIFY">
+
+<BLOCKQUOTE>
+
+<P>
+
+De acordo com a [National Pressure Injury Advisory Panel
+(NPIAP)](https://www.ibes.med.br/classificacao-das-lesoes-por-pressao-consenso-npuap-2016-adaptada-culturalmente-ao-brasil/)
+organização norte-americana dedicada à prevenção e tratamento de lesões
+por pressão, anunciou uma mudança na terminologia de úlcera de pressão
+para "lesão por pressão". Lesão por Pressão (LP) é definida como um dano
+localizado na pele e/ou tecido subjacente, como resultado de pressão ou
+em combinação com cisalhamento. Geralmente ocorrem sobre uma
+proeminência óssea mas podem também estar relacionada ao uso de
+dispositivo médico ou a outro objeto. A lesão pode se apresentar em pele
+íntegra ou como úlcera aberta e pode ser dolorosa.
+
+</BLOCKQUOTE>
+
+</DIV>
+
+# 5. Objetivos
+
+<DIV align="JUSTIFY">
+
+<P>
+
+-   Nortear e padronizar condutas de medidas preventivas, avaliação de
+    riscos, intervenção clínica e monitoramento da pele para a prevenção
+    de lesão e complicações cutâneas realizando o gerenciamento do
+    indicador de qualidade assistencial.
+
+-   Identificar a população de acordo com o risco, implantando
+    intervenções multidisciplinar, com o intuito de promover a segurança
+    do paciente, prevenindo o desenvolvimento de lesão, identificação
+    precoce da lesão, tratamento adequado, conduta de enfermagem e
+    acompanhamento ambulatorial.
+
+-   padronizar para aumentar a eficácia, contribuir para o
+    desenvolvimento da segurança do paciente e utilizar de forma
+    racional e segura os recursos institucionais disponíveis.
+
+    </DIV>
+
+# 6. Abordagem
+
+-   Identificar e classificar os pacientes com risco para LP;
+-   Implementar ações preventivas nos pacientes com risco para LP;
+-   Identificar precocemente LP em estágios iniciais;
+-   Avaliar, tratar e evoluir as LP instaladas.
+
+# 7. Fundamentação
+
+<DIV align="JUSTIFY">
+
+<P>
+
+As Lesões por Pressão podem desenvolver-se em 24 horas ou levar até três
+dias para se manifestar após uma cirurgia, por exemplo. Portanto, todos
+os profissionais de saúde são responsáveis pela prevenção da lesão e
+devem estar familiarizados com os principais fatores de risco para a
+formação da LP. Nos indivíduos que ficam impossibilitados de se
+movimentar, ocorrem pressões excessivas que fazem os capilares se
+colapsarem. Em consequência, o fluxo de sangue e de nutrientes é
+interrompido, o que pode levar à isquemia local e, eventualmente, à
+necrose celular, desencadeando a formação da LP.
+
+</DIV>
+
+<DIV align="JUSTIFY">
+
+<P>
+
+Todos os esforços devem ser feitos para redistribuir a pressão sobre a
+pele através do reposicionamento a cada duas horas e da utilização de
+superfícies de redistribuição de pressão. Os pacientes que apresentam
+grave comprometimento do seu estado geral podem desenvolver lesões em
+tempo inferior a duas horas, neste caso se faz necessário a avaliação
+diferenciada do profissional enfermeiro para que a mudança e
+redistribuição da pressão, especialmente sobre as proeminências ósseas,
+seja inferior às duas horas.<BR>
+
+O objetivo do reposicionamento a cada duas horas é redistribuir a
+pressão e, consequentemente, manter a circulação nas áreas do corpo com
+risco de desenvolvimento de LP. Duas horas em uma única posição é o
+máximo de tempo recomendado para pacientes com capacidade circulatória
+normal.<BR>
+
+O reposicionamento de pacientes de risco alterna ou alivia pressão sobre
+as áreas suscetíveis, reduzindo o risco de desenvolvimento de LP.
+Travesseiros e coxins são recursos facilmente disponíveis e que podem
+ser utilizados para auxiliar a redistribuição da pressão. Quando
+utilizados de forma apropriada, podem expandir a superfície que suporta
+o peso. Geralmente a pele de pacientes com risco para LP rompe-se
+facilmente durante o reposicionamento, portanto, deve-se tomar cuidado
+com a fricção durante este procedimento.<BR>
+
+Superfícies de apoio específicas redistribuem a pressão que o corpo do
+paciente exerce sobre a pele e os tecidos subcutâneos. Se a mobilidade
+do paciente está comprometida e a pressão nesta interface não é
+redistribuída, a pressão pode prejudicar a circulação, levando ao
+surgimento da lesão.<BR>
+
+Ressalta-se que o julgamento clínico do enfermeiro, fundamentado pelo
+conhecimento científico e experiência clínica, aliado aos instrumentos
+que permitam mensurar o risco para lesão por pressão de forma objetiva
+podem tornar o processo de avaliação mais eficaz e efetivo.
+
+</DIV>
+
+## 7.1. Fatores Intrínsecos e Extrínsecos
+
+<DIV align="JUSTIFY">
+
+<P>
+
+O mecanismo da LP está relacionado a alguns fatores de risco que podem
+ser divididos em intrínsecos e extrínsecos.
+
+</DIV>
+
+### 7.1.1. Fatores intrínsecos
+
+<DIV align="JUSTIFY">
+
+<P>
+
+Os fatores intrínsecos são inerentes ao paciente, sua condição clínica,
+patologia ou comorbidade associada, como:
+
+-   Limitações da atividade e mobilidade;
+-   Status da pele;
+-   Fatores de perfusão;
+-   Circulação e oxigenação;
+-   Indicadores nutricionais;
+-   Umidade;
+-   Temperatura corporal;
+-   Idade;
+-   Limitações da percepção sensorial;
+-   Marcadores de sangue;
+-   Estado geral e saúde mental.
+
+A idade é um fator largamente discutido, isoladamente ou em associação a
+outras variáveis como doenças cardiovasculares, hábitos de vida e
+permanência em UTI, pois implica em alterações fisiológicas próprias do
+processo de envelhecimento. A perda de massa muscular, a diminuição de
+resposta inflamatória, dos níveis de albumina e da tela subcutânea
+associados à redução na adesão derme e epiderme proporcionam maior risco
+de ruptura da integridade da pele, que já não tem adequada capacidade
+para redistribuir a carga mecânica a ela imposta, constituindo um item
+de importante representação para a estratificação de risco.
+
+</DIV>
+
+### 7.1.2. Fatores extrínsecos
+
+<DIV align="JUSTIFY">
+
+<P>
+
+As ações de proteção da pele estão relacionadas aos fatores de risco
+extrínsecos como:
+
+-   **Pressão**: causa morte celular por fechamento capilar e
+    interrupção do fluxo sanguíneo, quando a pressão é superior a 32
+    mmHg. Pode ser aplicada com grande intensidade durante curto período
+    de tempo ou com menos intensidade durante um período mais longo.
+-   **Umidade**: é consequente, na maioria das vezes, de incontinências
+    urinárias e fecais associadas ao uso de fralda, exsudato das
+    feridas, transpiração e restos alimentares.<BR>
+-   **Fricção**: é resultante do atrito entre duas superfícies, causando
+    lesão por abrasão ou bolhas. Geralmente ocorre quando o cliente se
+    arrasta ou é arrastado durante a transferência ou mudança de
+    decúbito.<BR>
+-   **Cisalhamento**: pode ser definido como a deformação que sofre um
+    corpo quando sujeito à ação de forças cortantes. É resultante da
+    movimentação ou posicionamento incorreto, quando o paciente desliza
+    na cama ou na poltrona.<BR>
+
+Para uma apropriada inspeção da pele, deve-se ter especial atenção às
+áreas corporais de maior risco para LP, como as [regiões
+anatômicas](https://www.kenhub.com/thumbor/kJRk9iUipd-tcywxr4LNHkc8c-E=/fit-in/800x1600/filters:watermark(/images/logo_url.png,-10,-10,0):background_color(FFFFFF):format(jpeg)/images/library/11381/regional-anatomy-of-thorax-and-abdomen_portuguese.jpg):
+**sacra**, **calcâneo**, **ísquio**, **trocanter**, **occipital**,
+**escapular, maleolar e regiões submetidas à pressão por dispositivos**,
+como presença de **cateteres, tubos e drenos**. Pacientes em [posição
+prona](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH_KAF_RXEMYfR7V05VrQ23qvyby3o_1S5AA&usqp=CAU),
+as regiões de risco são: fronte, mento, zigomático, nariz,
+clavícula-ombro, cotovelo, tórax-seios, genitália-pênis, ossos pélvicos
+anteriores (crista ilíaca, ísquio, sínfise púbica), joelho-patela,
+dorsais e dedos dos pés.
+
+</DIV>
+
+### 7.1.3. Fatores de risco adicionais:
+
+<DIV align="JUSTIFY">
+
+<P>
+
+-   Indivíduos na sala de operação;
+-   Indivíduos gravemente doentes;
+-   Neonatos e crianças.
+
+Os pacientes críticos na maioria das vezes, devido à instabilidade
+hemodinâmica e/ou respiratória, encontram-se sedados, em uso de
+ventilação mecânica e fármacos vasopressores. Tais terapêuticas clínicas
+são predisponentes ao desenvolvimento de lesão por pressão por aumentar
+a dependência para a mobilização no leito e no caso dos vasopressores
+por diminuir a perfusão periférica, favorecendo o aparecimento de lesões
+tissulares isquêmicas.<BR>
+
+Existem situações que podem comprometer a perfusão da pele durante a
+internação dos pacientes em unidades de terapia intensiva, como:<BR>
+
+-   **redução da pressão sanguínea decorrente de alterações
+    cardiovasculares**,
+-   **síndrome da resposta inflamatória sistêmica** (SIRS),
+-   **choque séptico**,
+-   **choque hemorrágico e por uso de fármacos**;
+-   **manutenção da pressão externa maior que 32 mmHg por um tempo
+    prolongado em mesas rígidas ou em camas hospitalares, sem adequada
+    superfície de suporte**;
+-   **instabilidade hemodinâmica com elevação da pressão externa sob o
+    corpo ou instabilidade hemodinâmica com pressão externa
+    contínua**.<BR>
+
+Em qualquer uma dessas situações, o paciente crítico sofre com a
+interrupção do fluxo sanguíneo para a área que está sob pressão,
+interferindo na oxigenação e nutrição dos tecidos naquele local e
+podendo ocorrer, consequentemente, isquemia, hipóxia, acidose tissular,
+edema e necrose tecidual. A tolerância dos tecidos à pressão e à
+isquemia depende da natureza dos próprios tecidos e é influenciada pela
+habilidade da pele e das estruturas de suporte em redistribuir a pressão
+aplicada.
+
+</DIV>
+
+# 8. Classificação da Lesão por Pressão
+
+<DIV align="JUSTIFY">
+
+<P>
+
+**Estágio I** - Pele intacta com eritema não branqueável geralmente
+sobre uma proeminência óssea. Pacientes com tons de pele escura podem
+não apresentar hiperemia não branqueável visível. A área pode estar
+dolorosa, firme, macia e quente em comparação com a pele adjacente.<BR>
+
+**Estágio II** - Perda parcial da espessura da derme que se apresenta
+como uma lesão superficial, com leito rosa ou vermelho, sem tecido
+necrótico. Também pode se apresentar como uma bolha com exsudato seroso
+intacto ou rompido.<BR>
+
+**Estágio III** - Perda total da espessura da pele. Tecido subcutâneo
+pode estar visível, mas ossos, tendões ou músculos não estão expostos.
+Tecido necrótico pode estar presente. A profundidade pode variar
+conforme a localização anatômica.<BR>
+
+**Estágio IV** - Perda total da espessura da pele com exposição de
+ossos, tendões ou músculos. Tecido necrótico pode estar visível no leito
+da ferida. Geralmente apresentam túneis ou descolamento. A profundidade
+pode variar conforme a localização anatômica.<BR>
+
+**Inclassificável** - Perda total da espessura da pele, coberta com
+tecido necrótico/escara (amarelo, cinzento, marrom ou preto) no leito da
+ferida. Até a remoção/desbridamento do tecido necrótico/escara, o
+estágio não pode ser determinado. Após a remoção da necrose, a lesão
+poderá ser classificada em estágio III ou IV.<BR>
+
+**Lesão tissular profunda** - Área localizada em pele intacta, de
+coloração roxa ou marrom. A evolução pode incluir bolha com conteúdo
+hemático devido a danos nos tecidos moles por pressão e/ou cisalhamento.
+Pode ser precedido por tecido doloroso, firme, mais quente ou mais frio
+comparado ao tecido subjacente, podendo ser difícil detectar em
+indivíduos com tons de pele escura. A evolução pode ser rápida, expondo
+as camadas de tecido, mesmo com tratamento ideal. A lesão pode evoluir
+para necrose e sua classificação quanto ao estágio é determinada após o
+desbridamento.<BR>
+
+**Lesão por pressão relacionada a dispositivo médico** - Essa
+terminologia descreve a etiologia da lesão. A Lesão por Pressão
+Relacionada a Dispositivo Médico resulta do uso de dispositivos criados
+e aplicados para fins diagnósticos e terapêuticos. A lesão por pressão
+resultante geralmente apresenta o padrão ou forma do dispositivo. Essa
+lesão deve ser categorizada usando o sistema de classificação de lesões
+por pressão.<BR>
+
+**Lesão por pressão em mucosa** - A lesão por pressão em membranas
+mucosas é encontrada quando há histórico de uso de dispositivos médicos
+no local do dano. Devido à anatomia do tecido, essas lesões não podem
+ser categorizadas.
+
+</DIV>
+
+# 9. Lesões diferenciais x Lesão por Pressão
+
+<DIV align="JUSTIFY">
+
+<P>
+
+O
+[COVID-19](https://www.cochranelibrary.com/cdsr/doi/10.1002/14651858.CD013665.pub3/full)
+atingiu todos os continentes, sendo então caracterizado como uma
+pandemia pela Organização Mundial da Saúde. É uma doença
+infectocontagiosa proveniente do novo vírus SARS -CoV -2, que pode
+evoluir para quadro mais grave da COVID 19, a Síndrome Respiratória
+Grave Aguda (SRGA).
+
+A doença causada pelo novo coronavírus, também conhecida como COVID-19,
+é uma enfermidade que acomete as vias respiratórias, na qual o vírus
+apresenta-se extremamente infeccioso e gera no indivíduo acometido
+condições clínicas variadas, bem como sintomas diversos. Sabe-se que a
+maioria das pessoas infectadas apresentam a forma mais leve da doença.
+No entanto, 14% dos doentes podem desenvolver sua forma crítica,
+necessitando de oxigenoterapia e, pelo menos, 5% evoluirão para uma
+pneumonia mais grave. Esse grupo necessita de tratamento em **unidade de
+terapia intensiva (UTI)**, utilizando com frequência **ventilação não
+invasiva (VNI) e intubação** com consequente suporte em ventilação
+mecânica.<BR>
+
+Embora a falha do tegumento seja comumente atribuída apenas à pressão,
+especialmente quando uma ferida se desenvolve sobre uma proeminência
+óssea (lesão por pressão), todas as falhas de pele não devem ser
+atribuídas a lesões por pressão. <BR>
+
+Pacientes internados em UTI, intubados sob ventilação mecânica,
+frequentemente apresentarão alto risco de desenvolver lesões de pele,
+especialmente lesão por pressão (LP), devido às suas condições clínicas
+e hemodinâmicas comprometidas, imobilidade no leito, percepção sensorial
+diminuída, entre outros fatores intrínsecos e extrínsecos que favorecem
+o desenvolvimento dessas lesões. <BR>
+
+A prevenção de LP no contexto do coronavírus apresenta-se como uma
+situação ainda mais desafiadora, pois as alterações decorrentes da
+infecção expõem o paciente à maior instabilidade, menor oxigenação
+tecidual, tempo de internação prolongado em unidade crítica,
+dificultando no reposicionamento dos pacientes.<BR>
+
+Um dos fatores que favorecem o desenvolvimento de lesões cutâneas em
+pacientes com COVID é a coagulopatia sistêmica, que devido a síndrome
+respiratória aguda grave do coronavírus 2 (Sars-CoV-2), acontece a
+hipercoagulação e oclusão microvascular, que está associada a diversas
+complicações clínicas e ao aparecimento de manifestações cutâneas no
+paciente.<BR>
+
+Embora as manifestações cutâneas apresentam-se comumente como áreas
+arroxeadas, elas não devem ser confundidas com LP tissular profunda, é
+necessário avaliar se a área em questão foi submetida a pressão e
+cisalhamento. Além disso, esse estado de hipercoagulação pode favorecer
+o desenvolvimento de uma LP com deterioração rápida, mesmo quando em uso
+das medidas preventivas adequadas. <BR> Ademais, a oclusão microvascular
+tem impacto em vários órgãos, o que favorece o desenvolvimento de
+múltiplas disfunções orgânicas, podendo interferir direto na manutenção
+da integridade da pele devido ao menor aporte de suprimento para os
+tecidos, aumento de líquido intersticial, com consequente aumento da
+vulnerabilidade da pele.<BR>
+
+As lesões por pressão em pacientes com o novo coronavírus têm a mesma
+etiologia e mecanismo fisiopatológico de pacientes com outras
+enfermidades. Porém, destaca-se que a grande diferença são os mecanismos
+da doença. Pacientes graves apresentam **troca gasosa prejudicada**,
+**hipercatabolismo**, evoluem para **desnutrição** rapidamente e
+**necessitam utilizar diversos dispositivos** que também causam
+pressão.<BR>
+
+Outra diferença é que, nesse grupo de pacientes, as lesões evoluem de
+maneira mais rápida e agressiva, tendo como característica atingir
+planos mais profundos rapidamente e com grandes extensões. Pouco se sabe
+ainda sobre esse mecanismo, mas os especialistas apontam que isso ocorre
+devido à inflamação disseminada e ao acometimento dos vasos sanguíneos.
+Com isso, a circulação de sangue para os tecidos fica prejudicada.
+Somando-se à pressão exercida sobre as proeminências ósseas, o dano
+tecidual é acelerado.<BR>
+
+Em 2017, o autor Levine sugeriu a utilização da nomenclatura [**Skin
+Failure**](https://journals.lww.com/aswcjournal/Fulltext/2022/03000/Skin_Failure__Concept_Review_and_Proposed_Model.3.aspx?context=LatestArticles)
+para as lesões que decorrem da terminalidade e da gravidade do paciente,
+com má perfusão tecidual, podendo ser classificada em aguda, crônica ou
+relacionada à fase final de vida.<BR>
+
+A falência aguda da pele ou Acute Skin Failure (ASF) não possui uma
+definição clara na literatura, no entanto, vários autores se referem
+como danos na pele decorrentes de processo agudo, em geral, com
+instabilidade clínica e hemodinâmica, limitando a oferta de nutrientes e
+oxigênio para esse órgão.<BR>
+
+Essas lesões geralmente ocorrem devido à hipóxia tecidual, podendo
+acometer qualquer área do corpo, não necessariamente em proeminência
+óssea. Como fatores preditores ao seu aparecimento, destacam-se a:
+
+-   **ventilação mecânica prolongada** (\> 72h),
+-   **falência múltipla de órgãos** (2 ou mais sistemas comprometidos),
+-   **presença de doença arterial periférica**
+-   **sepse ou choque séptico**.
+
+Já a falência crônica da pele acontece em decorrência de doença crônica
+pré-existente.<BR>
+
+A diferenciação entre a LP evitável e a lesão ASF (acute skin failure)
+está, portanto, no fator causal e na implementação das medidas
+preventivas. As LP's decorrem especificamente da pressão, fricção e
+cisalhamento em áreas de proeminências ósseas ou em uso de dispositivos
+médicos. Já as ASF têm a instabilidade clínica e hemodinâmica como
+principais fatores causais, ao resultarem em hipóxia tecidual que
+acomete áreas distintas do corpo, em proeminências ósseas ou não.<BR>
+
+A falência da pele relacionada à fase final de vida é denominada como
+[Skin Changes at Life's
+End](https://www.magonlinelibrary.com/doi/abs/10.12968/bjcn.2022.27.Sup3.S14) -
+SCALE. A [Úlcera Terminal de Kennedy
+(UTK)](https://teste.revistaenfermagematual.com/index.php/revista/article/view/1350/1394)
+ocorre como um processo dessas modificações e, assim, estão inseridas na
+SCALE.<BR>
+
+É importante reconhecer as diferenças entre **lesão por pressão** (LP) e
+**Úlcera Terminal de Kennedy** (UTK).<BR>
+
+A Úlcera Terminal de Kennedy (UTK) é definida como uma ferida de
+evolução rápida, causada por pressão, tendo como fator causal primário
+falência dos órgãos e que se apresenta em forma de pêra, borboleta ou
+ferradura. Possui coloração vermelha, amarela, preta ou roxa que pode
+iniciar como uma bolha ou abrasão no cóccix ou sacro, cotovelos, braços
+e panturrilha.<BR>
+
+Enquanto a LP tem como fator etiológico a pressão ou pressão em
+combinação com o cisalhamento, a UTK decorre da falência da pele e do
+tecido subjacente devido à hipoperfusão simultânea à disfunção severa ou
+falha de outros sistemas e/ou órgãos, tendo um aparecimento súbito e
+evolução rápida, variando de duas semanas a 24 horas do surgimento da
+lesão à morte do paciente, independente dos cuidados estabelecidos
+devido a insuficiência cutânea aguda.
+
+Tendo em vista que as lesões englobadas no conceito de Skin Failure e
+Úlcera Terminal de Kennedy são desenvolvidas mesmo após a implementação
+de medidas preventivas adequadas ao risco do paciente para LP, é
+fundamental a realização de uma avaliação global destes eventos,
+considerando não só aspectos clínicos do paciente, mas também tópicos
+relacionados à instituição hospitalar na qual esse se encontra.
+
+Esses tópicos referem-se à existência de protocolos adequados e
+atualizados para a prevenção de lesões de pele, adesão da equipe às
+medidas preventivas, anotações adequadas em prontuário e inclusão de
+justificativas para sua não execução quando indicadas. Além disso,
+fatores organizacionais também devem ser analisados, tais como recursos
+materiais e humanos disponíveis, logística adequada para realização das
+estratégias de prevenção, entre outros. O diagnóstico diferencial de
+lesões de pele é um desafio, especialmente no ambiente crítico.
+
+Por um lado, deve-se ter o diagnóstico diferencial de lesões
+confundidoras, por outro, há uma luta constante para que a prevenção de
+LP não seja banalizada e vista como impossível dentro da UTI. Dessa
+forma, uma vez identificada a LP, a **NPIAP** recomendaa aplicação da
+ferramenta de **análise de causa raiz** para lesões adquiridas no
+ambiente hospitalar, analisando especialmente o período de 72h antes do
+seu aparecimento.
+
+Essa ferramenta pode auxiliar no diagnóstico diferencial e no
+levantamento de possíveis preditores de lesões consideradas inevitáveis
+e/ou decorrentes de falência aguda da pele. Em documento sobre os
+aspectos relacionados à complexidade do paciente com COVID-19 e o
+surgimento de LP inevitáveis publicado pela NPIAP em 2020, logo no
+início da pandemia, encontram-se a fisiopatologia do vírus, a
+instabilidade do paciente e os fatores de risco intrínsecos e
+extrínsecos como causais, o que se assemelha àqueles descritos para as
+ASF, dificultando ainda mais o diagnóstico diferencial entre ambas.
+
+As **ASF** ainda são pouco discutidas na literatura, dificultando a sua
+diferenciação com as LP evitáveis na prática diária. É de extrema
+importância a realização do diagnóstico diferencial, uma vez que a LP
+evitável é considerada um evento adverso relacionado à assistência em
+saúde, passível de impacto jurídico e econômico, e mostra a fragilidade
+da qualidade institucional, diferentemente das ASF que não compõem os
+indicadores de qualidade e deveriam ser excluídas do numerador do
+indicador de LP.
+
+<DIV align="center">
+
+<P>
+
+![WOUNDCLINIC Awareness of COVID-19 Skin and Mucosal
+Manifestations.2021](https://s3.amazonaws.com/HMP/hmp_ln/inline-files/Scarborough%204-6.jpg?VersionId=R3fUiXT_cv7Ejl1GOmu5Fm9NohJlV7lE)
+
+![NPIAP - NATIONAL PRESSURE INJURY ADVISORY IAP PANEL. Deep Tissue
+Pressure Injury or an imposter?
+2021](https://woundvision.com/wp-content/uploads/2021/01/DTPI-Imposter-Resource-1.jpg){width="700"}
+
+</DIV>
+
+## 9.1 Cuidados de enfermagem
+
+<DIV align="JUSTIFY">
+
+<P>
+
+-   Realizar análise de causa raiz da LP, considerando fatores
+    extrínsecos e intrínsecos ao paciente e ao serviço de saúde;
+
+-   Realizar diagnóstico diferencial entre manifestações cutâneas da
+    COVID-19, LP tissular profunda e Úlcera Terminal de Kennedy;
+
+-   Considerar que lesões em áreas não submetidas à pressão,
+    cisalhamento e dispositivos provavelmente não são LP;
+
+-   Garantir que todas as medidas preventivas tenham sido executadas e
+    registradas nos prontuários dos pacientes. Nesse caso, mesmo que o
+    paciente desenvolva LP, esta poderá ser considerada inevitável, uma
+    vez que todas as intervenções foram realizadas adequadamente e
+    devido à magnitude e gravidade do paciente.
+
+    </DIV>
+
+# 10. Classificação Estatística Internacional de Doenças e Problemas Relacionados à Saúde (CID-10) / Sistemas de Classificação de Enfermagem (CIPE, NANDA, NIC, NOC)
+
+**Diagnósticos de Enfermagem**
+
+<DIV align="rigth">
+
+<P>
+
+***Risco de Integridade da pele prejudicada:***<BR> + Pressão sobre a
+proeminência óssea <BR> + Forças de cisalhamento<BR> + Umidade<BR>
+
+***Dor aguda:***<BR> + Agente de lesão biológica<BR> + Uso impróprio de
+produtos químicos<BR> + Agente de lesão física<BR>
+
+***Risco de lesão por pressão em adulto:***<BR> + Diminuição da
+mobilidade física<BR> + Microclima alterado entre a pele e superfície de
+apoio<BR> + Pressão sobre a proeminência óssea<BR>
+
+***Risco de infecção:***<BR> + Integridade da pele prejudicada<BR>
+
+***Risco de lesão de posicionamento perioperatória:***<BR> + Posição não
+anatômica prolongada<BR> + Superfície de suporte rígida<BR> +
+Desnutrição/ Obesidade<BR>
+
+</DIV>
+
+# 11. Critérios de inclusão
+
+<DIV align="JUSTIFY">
+
+<P>
+
+-   Pacientes adultos e pediátricos hospitalizados ou em atendimento
+    ambulatorial identificados com riscos para LP (escores nas escalas
+    Braden).
+-   Pacientes com mobilidade física prejudicada (acamados/cadeirantes);
+-   Pacientes com a percepção sensorial comprometida;
+-   Pacientes submetidos a procedimentos cirúrgicos (tempo de cirurgia;
+    posições cirúrgicas e tipo de anestesia);
+-   Pacientes com dispositivos médicos e outros artefatos (colar
+    cervical; órteses; contensores mecânicos; cateteres; drenos; pronga
+    nasal e outros);
+-   Pacientes com nutrição deficiente;
+-   Pacientes com incontinência urinária/fecal.
+
+# 12. Critérios de exclusão
+
+<DIV align="JUSTIFY">
+
+<P>
+
+-   Pacientes atendidos na rede Prevent Senior que apresentem a
+    integridade da pele preservada e avaliada pelo enfermeiro, e que não
+    sejam identificados fatores de risco para o desenvolvimento de lesão
+    por pressão através do instrumento de avaliação.
+
+# 13. Medidas de prevenção
+
+<DIV align="JUSTIFY">
+
+<P>
+
+A prevenção de Lesão por Pressão se inicia na admissão do paciente sem
+presença de LP, desta forma não permitindo que o mesmo desenvolva
+durante o período de hospitalização. A LP pode ser evitada por meio da
+avaliação e identificação dos pacientes que apresentem riscos para o
+desenvolvimento de LP sendo realizado implantação de estratégias para
+prevenção confiáveis para estes pacientes.
+
+**1ª ETAPA:** Avaliação de risco para o desenvolvimento de Lesão por
+Pressão na admissão de todos os pacientes:
+
+Todo paciente deverá ser avaliado sistematicamente na admissão. Essa
+avaliação deve levar em consideração as fragilidades, vulnerabilidades e
+fatores de risco para o desenvolvimento de alterações de pele.<BR>
+
+Na admissão, são traçadas as estratégias para a prevenção de LP em
+pacientes com risco baixo, moderado, alto e muito alto. Durante a
+Sistematização da Assistência de Enfermagem, deve-se documentar os
+achados durante a inspeção da pele e os cuidados prescritos de acordo
+com a classificação de risco para o desenvolvimento de LP.
+
+Uma assistência de enfermagem de qualidade preza pela manutenção da
+integridade da pele através de conhecimento e implementação de medidas
+preventivas de cuidado simples ao complexo.
+
+As LP's causam danos ao paciente ao dificultar o processo de recuperação
+funcional, prolongar o período de hospitalização, causar dor, infecções
+graves, além de consequências fatais como sepse e mortalidade.
+
+**2ª ETAPA:** Reavaliação diária de risco de desenvolvimento de LP de
+todos os pacientes internados:
+
+Após a admissão, é de suma importância a continuidade desta avaliação
+sistemática do paciente com risco para LP, independente se risco baixo,
+moderado, alto ou muito alto, deverá ser executada diariamente.
+
+**3ª ETAPA:** Inspeção diária da pele:
+
+Inspeção diária de toda a superfície cutânea, sentido céfalo-podálico.
+Em virtude da rápida mudança de fatores de risco em pacientes agudamente
+enfermos, a inspeção diária da pele é fundamental. Momentos oportunos
+para a inspeção da pele: hora da higiene corporal, higiene íntima,
+mudança de decúbito e deambulação.
+
+**4ª ETAPA:** Manejo da Umidade:
+
+Atenção para minimizar a exposição cutânea à umidade (microclima)
+decorrente de incontinência urinária e fecal, diarreias, transpiração ou
+exsudato de feridas.
+
+**5ª ETAPA:** Otimização da nutrição e da hidratação:
+
+Pacientes com déficit nutricional ou desidratação podem apresentar perda
+de massa muscular e de peso, tornando os ossos mais salientes e a
+deambulação mais difícil. Se faz importante a avaliação e acompanhamento
+nutricional para todos os pacientes em risco.
+
+**6ª ETAPA:** Minimizar a pressão:
+
+A preocupação principal é a redistribuição da pressão, especialmente
+sobre as proeminências ósseas. Estratégias para minimizar e aliviar a
+pressão são o uso de superfícies de apoio como colchão de espuma
+reativa, coxins e posicionadores, mudança de decúbito, estimular a
+deambulação precoce, aplicação de curativos para proteção das
+proeminências ósseas em pacientes classificados em alto risco e também
+em uso de dispositivos médicos.
+
+# 14. Avaliação admissional de enfermagem
+
+<DIV align="JUSTIFY">
+
+<P>
+
+Na admissão do paciente, seja no setor de internação, unidade de terapia
+intensiva, centro cirúrgico ou até mesmo no pronto-socorro, o enfermeiro
+deve realizar a sistematização da assistência de enfermagem avaliando o
+paciente de forma holística.
+
+## 14.1 Ações pertinentes ao enfermeiro
+
+<DIV align="JUSTIFY">
+
+<P>
+
+Cabe ao enfermeiro:
+
+-   realizar a coleta de dados
+-   a avaliação do risco do paciente em desenvolver lesão por pressão
+-   planejamento
+-   implementação de estratégias para prevenção
+-   prescrição de enfermagem
+
+A pronta identificação de pacientes em risco para o desenvolvimento de
+LP, por meio de utilização de ferramentas validadas, permite a adoção de
+medidas preventivas. Uma ferramenta de avaliação de risco oferece uma
+abordagem estruturada da avaliação, mas não substitui uma ampla
+avaliação realizada por um profissional de saúde adequadamente
+qualificado, usando uma abordagem estruturada para informar o julgamento
+clínico.
+
+As ferramentas de avaliação de risco não incluem necessariamente a
+avaliação de todos os fatores-chave que podem aumentar o risco de
+desenvolvimento de lesões por pressão, portanto, uma ferramenta de
+avaliação de risco é uma forma de avaliação na qual um profissional de
+saúde se baseia ao usar seu julgamento clínico.
+
+*A escala de Braden é a ferramenta mais amplamente utilizada* dentre
+aquelas disponíveis e deve ser aplicada diariamente pelo enfermeiro, na
+admissão do paciente na unidade e durante sua internação. Ela é composta
+de seis itens:
+
+-   percepção sensorial
+-   umidade, atividade
+-   mobilidade
+-   nutrição
+-   fricção e cisalhamento
+
+*Cada item é pontuado de 1 (menos favorável) a 4 (mais favorável)*; o
+item fricção e cisalhamento, é pontuado de 1 a 3. Cada item tem um
+título e um conceito que descreve os atributos a serem avaliados. *A
+pontuação varia de 6 a 23*. Considera-se pacientes sem risco com escore
+entre 19 e 23; em baixo risco, escores de 15 a 18; em risco moderado,
+escores de 13 a 14; em risco alto, escores de 10 a 12; e em risco muito
+alto, escore menor que 9. A partir do conhecimento do risco que o
+indivíduo tem de desenvolver LP, medidas adequadas devem ser
+implementadas, a fim de evitar o desenvolvimento da LP.
+
+### Escala de Braden
+
+::: {align="center"}
+![](https://www.abcdaenfermagem.com.br/wp-content/uploads/2021/06/Escala-de-braden-1.jpg){width="700"}
+:::
+
+-   **Percepção Sensorial:** Capacidade de reagir significativamente à
+    pressão relacionada ao desconforto.
+
+1.  **Totalmente Limitado:** não reage (não geme, não se segura a nada,
+    não se esquiva) a estímulo doloroso, devido ao nível de consciência
+    diminuído ou devido a sedação ou capacidade limitada de sentir dor
+    na maior parte do corpo.
+
+2.  **Muito Limitado:** Somente reage a estímulo doloroso. Não é capaz
+    de comunicar desconforto exceto através de gemido ou agitação. Ou
+    possui alguma deficiência sensorial que limita a capacidade de
+    sentir dor ou desconforto em mais da metade do corpo.
+
+3.  **Levemente limitado:** Responde a comando verbal, mas nem sempre é
+    capaz de comunicar o desconforto ou expressar necessidade de ser
+    mudado de posição ou tem um certo grau de deficiência sensorial que
+    limita a capacidade de sentir dor ou desconforto em uma ou duas
+    extremidades.
+
+4.  **Nenhuma limitação:** Responde a comandos verbais. Não tem déficit
+    sensorial que limitaria a capacidade de sentir ou verbalizar dor ou
+    desconforto.
+
+-   **Umidade:** Nível ao qual a pele é exposta à umidade.
+
+1.  **Completamente molhada:** A pele é mantida molhada quase
+    constantemente por transpiração, urina, etc. Umidade é detectada nas
+    movimentações do paciente.
+
+2.  **Muito molhada:** A pele está frequentemente, mas nem sempre,
+    molhada. A roupa de cama deve ser trocada pelo menos uma vez por
+    turno.
+
+3.  **Ocasionalmente molhada:** A pele fica ocasionalmente molhada,
+    requerendo uma troca extra de roupa de cama por dia
+
+4.  **Raramente molhada:** A pele geralmente está seca, a troca de roupa
+    de cama é necessária somente nos intervalos de rotina.
+
+-   **Atividade:** Grau de atividade física.
+
+1.  **Acamado:** confinado à cama.
+
+2.  **Confinado à cadeira:** Capacidade de andar está severamente
+    limitada ou nula. Não é capaz de sustentar o próprio peso e/ou
+    precisa ser ajudado a se sentar.
+
+3.  **Anda ocasionalmente:** Anda ocasionalmente durante o dia, embora
+    distâncias muito curtas, com ou sem ajuda. Passa a maior parte de
+    cada turno na cama ou na cadeira.
+
+4.  **Anda frequentemente:** Anda fora do quarto pelo menos duas vezes
+    por dia e dentro do quarto pelo menos uma vez a cada duas horas
+    durante as horas em que está acordado. Mobilidade: Capacidade de
+    mudar e controlar a posição do corpo.
+
+-   **Mobilidade**
+
+1.  **Totalmente imóvel:** Não faz nem mesmo pequenas mudanças na
+    posição do corpo ou extremidades sem ajuda.
+
+2.  **Bastante limitado:** Faz pequenas mudanças ocasionais na posição
+    do corpo ou extremidades mas é incapaz de fazer mudanças frequentes
+    ou significantes sozinho.
+
+3.  **Levemente limitado:** Faz frequentes, embora pequenas, mudanças na
+    posição do corpo ou extremidades sem ajuda.
+
+4.  **Não apresenta limitações:** Faz importantes e frequentes mudanças
+    de posição sem auxílio. Nutrição: Padrão usual de consumo alimentar
+
+-   **Nutrição**
+
+1.  **Muito pobre:** Nunca come uma refeição completa. Raramente come
+    mais de 1/3 do alimento oferecido. Come 2 porções ou menos de
+    proteína (carne ou laticínios) por dia. Ingere pouco líquido. Não
+    aceita suplemento alimentar líquido.Ou é mantido em jejum e/ou
+    mantido com dieta líquida ou IVs por mais de 5 dias.
+
+2.  **Provavelmente inadequado:** Raramente come uma refeição completa e
+    geralmente come cerca de metade do alimento oferecido. Ingestão de
+    proteína inclui somente 3 porções de carne ou laticínios por dia.
+    Ocasionalmente aceitará um suplemento alimentar. Ou recebe abaixo da
+    quantidade satisfatória de dieta líquida ou alimentação por sonda.
+
+3.  **Adequado:** Come mais da metade da maioria das refeições. Come um
+    total de 4 porções de alimento rico em proteína (carne ou laticínio)
+    todo dia. Ocasionalmente recusará uma refeição mas, geralmente,
+    aceitará tomar um complemento oferecido. Ou é alimentado por sonda
+    ou regime de nutrição Parenteral Total o qual provavelmente satisfaz
+    a maior parte das necessidades nutricionais.
+
+4.  **Excelente:** come a maior parte de cada refeição. Nunca recusa a
+    refeição. Geralmente ingere um total de 4 ou mais porções de carne e
+    laticínios. Ocasionalmente come entre as refeições. Não requer
+    suplemento alimentar.
+
+-   **Fricção e Cisalhamento**
+
+1.  **Problema:** requer assistência moderada a máxima para se mover. É
+    impossível levantá-lo ou erguê-lo completamente sem que haja atrito
+    da pele com o lençol. Frequentemente escorrega na cama ou cadeira,
+    necessitando freqüentes ajustes de posição com máximo de
+    assistência, espasticidade, contratura ou agitação leva a quase
+    constante fricção .
+2.  **Problema em potencial:** Move-se mas sem vigor ou requer mínima
+    assistência. Durante o movimento provavelmente ocorre um certo
+    atrito da pele com lençol, cadeira, ou outros. Na maior parte do
+    tempo mantém posição relativamente boa na cama ou cadeira mas
+    ocasionalmente escorrega.
+3.  **Nenhum problema:** Move-se sozinho na cama ou cadeira e tem
+    suficiente força muscular para erguer-se completamente durante o
+    movimento.Sempre mantém boa posição na cama ou na cadeira.
+
+```{=html}
+<style>
+div.blue1 { background-color:#e6f0ff; border-radius: 5px; padding: 20px;text-align: left;}
+</style>
+```
+::: blue1
+#### *Escore Risco*
+
+-   = ou \< 9: Risco muito alto
+
+-   de 10 a 12 Risco alto
+
+-   de 13 e 14 Risco moderado
+
+-   de 15 a 18 Risco baixo
+
+-   de 19 a 23 Sem risco
+:::
+
+A avaliação do risco deve ser realizada diariamente pelo enfermeiro e
+após definir o score, iniciar o protocolo de prevenção de lesão
+implementando as medidas preventivas.
+
+## 14.2. Ações pertinentes ao técnico e auxiliar de enfermagem
+
+Cabe aos técnicos de enfermagem e auxiliares seguirem a prescrição de
+enfermagem desempenhando o cuidado ao paciente na prevenção de lesão por
+pressão, seguindo as etapas de prevenção.
+
+## 14.3. Ações pertinentes à toda a equipe de enfermagem
+
+**Inspeção da Pele:**
+
+A avaliação da pele e tecidos moles é um componente essencial da
+prevenção, classificação, diagnóstico e prevenção de lesões por pressão.
+A condição da pele e do tecido subjacente pode servir como um indicador
+de sinais precoces de danos por pressão. Nesta etapa se faz necessária a
+inspeção da pele do paciente na admissão do paciente na instituição e
+nas avaliações diárias, a fim de identificar se a pele encontra-se
+íntegra ou algum tipo de lesão já instalada. A avaliação rotineira da
+pele e dos tecidos oferece uma oportunidade para identificação e
+tratamento precoce de alterações cutâneas, especialmente lesões por
+pressão. Essa inspeção permite ao enfermeiro identificar precocemente a
+presença de eritema não branqueável ou outras lesões. Atenção para tons
+escuros de pele.
+
+Alguns cuidados podem ser prescritos para o cuidado com a pele:
+
+-   Manter a pele limpa e seca;
+-   Utilização de água morna e sabonete líquido para reduzir a irritação
+    e o ressecamento da pele;
+-   Dar preferência a sabonetes líquidos e se possível, utilizar um
+    produto de limpeza da pele com um ph aproximado da pele;
+-   Secar bem pele e suas dobras;
+-   Considerar a utilização de emolientes para hidratar a pele seca, a
+    fim de reduzir o risco de dano da pele;
+-   Durante a hidratação da pele, não massagear áreas de proeminências
+    ósseas ou áreas hiperemiadas;
+-   Aplicação de hidratante deve ser realizada com movimentos suaves e
+    circulares;
+-   A massagem está contraindicada na presença de inflamação aguda e
+    onde existe a possibilidade de haver vasos sanguíneos danificados ou
+    pele frágil. A massagem não é recomendada como uma estratégia de
+    prevenção de lesões por pressão.
+
+**Manejo da umidade:**
+
+As principais características dos pacientes idosos são: - idade
+avançada - multimorbidade - diminuição do desempenho psíquico -
+dependência de cuidados.
+
+Além disso, a idade avançada, as doenças crônicas e agudas levam, direta
+ou indiretamente, a uma ampla gama de problemas de pele e tecidos. A
+exposição prolongada da pele à urina e ou fezes pode causar dermatite. A
+umidade da superfície da pele, o aumento do pH da superfície da pele,
+enzimas intestinais digestivas, atividades repetidas de limpeza da pele
+e um possível ambiente oclusivo contribuem para a irritação e a
+inflamação. O fator da presença da dermatite associada a incontinência
+está significativamente associado ao desenvolvimento de lesão por
+pressão.
+
+A prevenção e o tratamento incluem atividades para manter e melhorar a
+continência e limitar, para reduzir a exposição da pele à urina e fezes
+e para promover a cura e a reepitelização. Em peles envelhecidas
+frágeis, recomenda-se o uso de produtos para incontinência com materiais
+suaves e respiráveis com máxima capacidade de absorção. Atentar-se para
+outras fontes de umidade: **extravasamento de drenos sobre a pele**,
+**exsudato de feridas**, **suor** e **extravasamento de linfa** em
+pacientes com anasarca que são potencialmente irritantes para a pele.
+
+```{=html}
+<style>
+div.blue1 { background-color:#e6f0ff; border-radius: 5px; padding: 20px;text-align: left;}
+</style>
+```
+::: blue1
+Proteger a pele da exposição à umidade excessiva através do uso de
+produtos barreira de forma a reduzir o risco de danos, utilizando:
+
+-   óxido de zinco / creme barreira / spray protetor cutâneo na troca de
+    fraldas de acordo com a prescrição do enfermeiro;
+-   Desenvolver e implementar um plano individualizado de tratamento da
+    incontinência (consultar protocolo de dermatite em caso de
+    dermatite);
+-   Controlar a umidade proveniente de incontinências urinária e fecal,
+    realizando a troca da fralda sempre que apresentar sujidade.
+-   A utilização de fraldas e absorventes é recomendada quando as fontes
+    de umidade não puderem ser controladas.
+:::
+
+**Minimizar a pressão:**
+
+1.  Reposicionar o paciente de tal forma que a pressão seja aliviada ou
+    redistribuída com o auxílio de
+    [coxins](https://www.hospitalmetropolitano.pb.gov.br/wp-content/uploads/metropolitano_coxins_lesoporpressao_3-400x300.jpeg),
+    travesseiros ou posicionadores, evitando posicionamento direto sobre
+    cateteres, drenos, proeminência ósseas e com [hiperemia não
+    reativa](https://sp-ao.shortpixel.ai/client/to_webp,q_glossy,ret_img/https://clinica.cenfesaude.com.br/wp-content/uploads/2018/10/exemplo-lesao-por-pressao-esatgio-1-370x243.png);
+2.  Realizar [mudança de
+    decúbito](https://docplayer.com.br/docs-images/104/164871287/images/35-0.jpg)
+    a cada 2 horas para reduzir a pressão exercida sobre áreas
+    vulneráveis do corpo, na ausência de contra-indicação relacionadas a
+    condição geral, clínica e/ou hemodinâmica do paciente.
+3.  Personalizar o tempo de mudança de decúbito de acordo com a
+    avaliação clínica do paciente e escala de braden e em casos de
+    lesões já existentes;
+4.  Utilizar preferencialmente colchões de espuma altamente específica
+    em vez de colchões hospitalares padrão.
+5.  Em pacientes com alto risco, utilizar superfícies dinâmicas;
+6.  A frequência da mudança de decúbito será influenciada por variáveis
+    relacionadas ao indivíduo (tolerância tecidual, nível de atividade e
+    mobilidade, condição clínica, objetivo do tratamento, condição da
+    pele e avaliação da dor) e pelas superfícies de redistribuição de
+    pressão;
+7.  Utilizar [forro
+    móvel](http://shopblob.blob.core.windows.net/1091-produtoimagem/zoom-Travessa%20do%20meio%20solteiro.jpg)
+    ou dispositivo mecânico de elevação para mover os pacientes e/ou
+    realizar transferência e reposicionamento, elevando o paciente e não
+    o arrastando;
+8.  Manter o lençol esticado e verificar se há presença de objetos,
+    dispositivos médicos ou restos alimentares ao posicionar o paciente;
+9.  Alternar posições: lado direito, dorsal e lado esquerdo.
+10. Evitar posturas que aumentam a pressão, como deitado de lado a 90º.
+11. Utilizar relógio de mudança de decúbito para direcionamento da
+    equipe;
+12. Manter os calcâneos livres de pressão, com o auxílio de um
+    travesseiro na região posterior da perna, com leve flexão dos
+    joelhos. A hiperextensão do joelho pode causar obstrução da veia
+    poplítea, que pode predispor a uma trombose venosa profunda. Os
+    dispositivos de prevenção de LP nos calcâneos devem elevá-los de tal
+    forma que o peso seja distribuído ao longo da sua parte posterior,
+    sem colocar pressão sobre o tendão de Aquiles;
+13. Elevar a cabeceira da cama até no máximo
+    [30°](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn-IPj1nfqcZiS50YuqcIRJVt1tljw_L66Kw&usqp=CAU)(exceto
+    pacientes em ventilação mecânica e/ou traqueostomizados), evitando
+    que o paciente escorregue, ocasionando fricção e cisalhamento. O
+    reposicionamento deve ser feito usando 30º na posição de semi-Fowler
+    e uma inclinação de 30º para posições laterais (alternadamente lado
+    direito, dorsal e lado esquerdo), se o paciente tolerar estas
+    posições e a sua condição clínica permitir.
+14. Evitar posturas que aumentem a pressão, tais como o Fowler acima dos
+    30º, a posição de deitado de lado a 90º, ou a posição de
+    semi-deitado;
+15. Para mobilização dos pacientes obesos ou com mobilidade muito
+    reduzida utilizar o elevador de transferência elétrico [(Max
+    Move)](https://www.mhedica.com.br/wp-content/uploads/2019/11/MaxiMove.jpg);
+16. Estimular o paciente a sentar no leito e/ou fora do leito com
+    auxílio, minimizando o risco de quedas, mas deve-se ter atenção ao
+    tempo que o indivíduo passa sentado na cadeira sem alívio de
+    pressão. Quando um indivíduo está sentado numa cadeira, o peso do
+    corpo faz com que as [tuberosidades
+    isquiáticas](https://w7.pngwing.com/pngs/207/6/png-transparent-ischium-ischial-tuberosity-pelvis-ischial-spine-avulsion-fracture-hip-fracture-fictional-character-avulsion-fracture-sacrum.png)
+    fiquem sujeitas a um aumento de pressão. Quanto menor a área, maior
+    a pressão que ela recebe. Consequentemente, sem alívio da pressão, a
+    LP surgirá muito rapidamente;
+17. Quando sentado, se os pés do paciente não chegam ao chão, coloque-os
+    sobre um banquinho ou apoio para os pés, o que impede que o paciente
+    deslize para fora da cadeira. A altura do apoio para os pés deve ser
+    escolhida de forma a fletir ligeiramente a bacia para frente,
+    posicionando as coxas numa inclinação ligeiramente inferior à
+    posição horizontal;
+18. Manter pacientes sob colchão de redistribuição de pressão. Não
+    utilizar colchões ou sobreposição de colchões de células pequenas de
+    alternância de pressão com o diâmetro inferior a 10 cm;
+19. Almofadas de ar e espuma redistribuem melhor a pressão, já as
+    almofadas de gel e de pele de carneiro causam maior pressão;
+20. Avaliar a necessidade do uso de materiais de curativos ([filme
+    transparente não
+    estéril](https://saudecomconforto.com.br/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/i/picture-17409-23151.jpg)
+    para risco baixo e moderado, [curativo multicamadas com bordas de
+    silicone](https://www.molnlycke.com.br/SysSiteAssets/master-and-local-markets/products-and-solutions/wound-care---products/mepilex-dressings/mepilex-border-sacrum-2-front.jpg)
+    para risco alto e muito alto) através das escalas padronizadas, para
+    proteger proeminências ósseas, a fim de evitar o desenvolvimento de
+    LP;
+21. O uso do [colchão
+    pneumático](https://www.locmed.com.br/media/catalog/product/cache/8a1b790a2366e5ba5d8f5e6e26656d4f/d/o/domus1_1.jpg)
+    deve ser priorizado aos pacientes com risco alto ou muito alto na
+    escala de Braden, nas Unidades de Terapia Intensiva e na Unidades de
+    Internação;
+22. Durante a mudança de decúbito evitar movimentos que causam o
+    cisalhamento e fricção da pele. Não arraste o paciente;
+23. Orientar paciente e a família sobre a prevenção e tratamento das
+    lesões por pressão;
+24. A utilização de superfícies de suporte e dispositivos complementares
+    auxiliam na prevenção e no tratamento da LP, entretanto não
+    substitui os demais cuidados com a pele e a mudança de posição. As
+    coberturas para prevenção de lesões por pressão devem ser usadas
+    somente depois que a avaliação da pele e do risco de lesões por
+    pressão identificarem que o paciente corre o risco de desenvolver
+    LP.
+25. A avaliação dos riscos deve ser estruturada, ocorrer o mais rápido
+    possível após a internação. Estudos demonstraram que algumas
+    coberturas podem reduzir a pressão, cisalhamento e atrito e reduzir
+    a probabilidade de alterar a umidade da pele.
+26. A **troca da placa deve ser realizada em até 7 dias** conforme
+    indicação do fabricante, ou quando antes desse prazo, se a placa
+    estiver danificada.
+
+# 15. Lesões por dispositivos médicos
+
+Os principais fatores que propiciam as lesões por pressão por
+[dispositivo
+médico](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqIaX19jeh_C-WbSLIBsL-hX-XrazxlYDYIkmovfDrHATTJuG7Rvwm1PYPmd4TawacFJ0&usqp=CAU)
+são o contato direto do dispositivo com a pele ou mucosa,
+características dos materiais utilizados, forma de fixação e dificuldade
+no ajuste ao corpo. A não verificação diária dos dispositivos, o uso
+prolongado, pacientes sedados ou confusos, umidade e integridade da
+pele, rigidez dos dispositivos, levam ao desenvolvimento de lesões.
+
+Os principais dispositivos de risco citados pela literatura no
+desenvolvimento dessas lesões são:
+
+-   **colar cervical**
+-   **dispositivos respiratórios**
+-   **sondas nasogástricas** e **nasoentéricas**
+-   **meias antiembolismo**
+-   **aparelhos ortopédicos**
+-   **cateteres uretrais**
+-   **restrições de pulso**
+-   **gesso**
+-   **talas**
+-   **dispositivos protéticos**
+-   **cateteres peridurais**
+-   **cateteres uretrais** e
+-   **oxímetro de pulso**
+
+É importante destacar o impacto que as lesões por pressão por
+dispositivos médicos geram ao paciente crítico:
+
+-   **desconforto**
+-   **dor**
+-   **risco de infecção**
+-   **prolongamento do tempo de permanência do paciente**
+
+Já na assistência, promovem a sobrecarga de trabalho da equipe de
+enfermagem e consequentemente geram altos custos para as instituições de
+saúde quando comparadas a outras lesões. No que se refere aos cuidados
+na prevenção das lesões por pressão por dispositivo médico assemelham-se
+aos cuidados na prevenção de lesões, apresentando apenas algumas
+particularidades de cada dispositivo como a fixação adequada, escolha de
+tamanho e posicionamento do mesmo.
+
+Essas lesões estão associadas a uma gama de dispositivos utilizados em
+UTI e são desafiadoras para as equipes de enfermagem, já que, apesar dos
+riscos causados pelo uso contínuo dos dispositivos médicos, os mesmos
+são componentes diagnósticos e terapêuticos essenciais na assistência ao
+paciente crítico.
+
+**Recomendações gerais para a prevenção de Lesão por pressão por
+dispositivos médicos:**
+
+-   Identificar dispositivos de risco para as lesões, escolher tamanho
+    correto do dispositivo médico de acordo com as características do
+    paciente;
+-   Encaixar e fixar dispositivo adequadamente;
+-   Avaliar diariamente a fixação do dispositivo e/ou método de fixação
+    assim como verificar a tensão;
+-   Realizar limpeza e hidratação da pele íntegra;
+-   Estar ciente quanto ao aspecto da pele e do risco potencial de
+    ruptura da pele (ex: edema, pele úmida e fragilizada);
+-   Atentar para que os dispositivos rígidos não sejam colocados
+    diretamente sob o paciente acamado ou imóvel;
+-   Aplicação de placas de hidrocolóide extra-finas, espumas de
+    poliuretano ou uso de gaze para alívio em pontos de pressão para
+    prevenção;
+-   Avaliar diariamente e questionar a necessidade de manter o uso do
+    dispositivo ou se o mesmo não necessita ser substituído;
+-   Mover ou reposicionar periodicamente dispositivo para avaliação da
+    pele, bem como realizar alteração de dispositivos entre os membros a
+    cada 2 horas para redistribuição da pressão;
+-   Verificação cutânea a cada 3 ou 4 horas;
+-   Aplicação de gaze ou espuma em pontos de pressão na fixação do TOT
+    (traqueostomia); Aplicação de espuma de poliuretano em pacientes com
+    IOT (intubação orotraqueal) que apresentem lesão ou pacientes em
+    prona;
+-   Descompressão e reposicionamento do dispositivo acima da lesão;
+-   Aplicação de coberturas adequadas para boa evolução da ferida quando
+    aberta.
+
+# 16. Estrutura das medidas preventivas de acordo com o score da Escala de Braden.
+
+(<https://apps1.qualiex.com/Docs#>)
+
+# 17. Prevenção no Paciente em Posicionamento de Prona
+
+::: {align="center"}
+![](https://api.plataforma.grupoa.education/v1/portalsecad/articles/9972/links/Images/Risco_Figura_1.png){width="1500"}
+:::
+
+O posicionamento em posição prona explora a gravidade e o
+reposicionamento do coração no tórax para recrutar os alvéolos
+pulmonares e melhorar a relação ventilação/perfusão e a oxigenação
+arterial. O gradiente gravitacional da pressão pleural é reduzido, as
+pressões transpulmonares são mais uniformes e o recrutamento alveolar
+pode ser alcançado em regiões atelectásicas sem prejudicar regiões que
+já haviam sido recrutadas. A posição prona pode auxiliar na melhora da
+troca gasosa em aproximadamente dois terços dos pacientes com SDRA, uma
+vez que a maioria deles apresenta unidades de pulmão pouco e/ou não
+aeradas localizadas principalmente nas posições pulmonares gravidade
+dependentes que, durante a posição prona, passariam a ser aeradas. Sendo
+assim, a posição prona funciona como uma manobra de recrutamento com
+efeitos a longo prazo, que leva à melhora da oxigenação. O
+posicionamento em prona no paciente tem como principal complicação as
+lesões por pressão (LP). A inspeção da pele diária é necessária tendo em
+vista a rápida mudança de fatores de risco em pacientes agudos. As
+regiões mais acometidas são as de proeminências ósseas como ombros,
+nariz, bochechas, testa, mandíbula, esterno e outros.
+
+Pacientes com instabilidade hemodinâmica e/ou respiratórias atendidas na
+Unidade de Terapia Intensiva (UTI) apresentam um quadro clínico de risco
+a LP decorrente do uso de **drogas vasoativas**, **sedação** e da
+**ventilação mecânica invasiva**.
+
+Além das LP's, a posição em prona aumenta o risco de **edema facial**,
+**instabilidade hemodinâmica transitória**, **abrasões da córnea** e
+**obstrução do tubo orotraqueal**. Devido aos riscos de complicações
+causadas pela posição em prona, é necessário que os profissionais de
+saúde tenham segurança e treinamento para o manejo desse paciente tanto
+na técnica adequada para pronar e tomar precauções de controle de lesões
+por pressão e controle de infecção em caso de desconexão acidental do
+tubo orotraqueal. Antes de realizar o posicionamento do paciente em
+prona é necessário aplicar curativo multicamadas (Mepilex) nas áreas de
+pressão:
+
+-   Fronte - tamanho 10x10cm;
+-   Zigomático - tamanho 7,5x7,5cm;
+-   Mento - tamanho 7,5x7,5 ou 10x10cm;
+-   Ombros - tamanho 10x10cm / paciente obeso 15x15cm;
+-   Crista ilíaca - tamanho 10x10cm / paciente obeso 15x15cm;
+-   Joelho - tamanho 10x10cm / paciente obeso 15x15cm;
+
+Realizar:
+
+-   proteção dos olhos com lubrificante ocular e micropore;
+-   Realizar a avaliação das fixações e dispositivos.
+
+A equipe deve estar atenta para utilizar os recursos como colchão
+pneumático para redistribuir a pressão, dispositivos como
+posicionadores, coxins e travesseiros para aliviar pontos de pressão,
+realizar pequenas mudanças de posição enquanto pronadas, identificar
+todos os pontos de pressão antes e após realizar o posicionamento em
+todas as áreas de pressão, registrar todas as avaliações de pele e
+medidas preventivas.
+
+# 18. Prevenção em Centro Cirúrgico
+
+A **imobilidade** é o principal fator em um paciente em risco, que
+indica que uma cobertura para prevenir lesões por pressão deve ser
+considerada. Imobilidade pode resultar de enfermidade, doença grave ou
+fragilidade, sedação, paralisia ou anestesia pré-cirúrgica,
+investigações ou tratamentos. Sabe-se que a duração da cirurgia está
+positivamente correlacionada com o risco de desenvolver uma lesão por
+pressão. No Centro Cirúrgico (CC), o dano tecidual pode ser observado do
+pós-operatório imediato e/ou até 48h a 72h após a cirurgia e pode não
+ser percebida durante o período da internação, ou seja, o paciente
+poderá manifestar a lesão no período de recuperação extra-hospitalar.
+
+A localização da LP nas nádegas é um indicativo que o paciente estava em
+decúbito dorsal no momento da pressão (procedimento cirúrgico). Existem
+vários fatores de risco relacionados à etiopatogenia da LP, que se
+desenvolvem durante os procedimentos cirúrgicos e podem ser agrupados em
+fatores intrínsecos e extrínsecos.
+
+Fatores intrínsecos:
+
+-   idade,
+-   peso corporal,
+-   quadro nutricional,
+-   doenças crônicas.
+
+Fatores extrínsecos:
+
+-   tempo de cirurgia,
+-   tipo de cirurgia,
+-   posicionamento.
+
+A assistência de enfermagem deve ser realizada cuidadosamente pelos
+enfermeiros do centro cirúrgico, implementando medidas para prevenir ou
+minimizar esse tipo de lesão, considerando os fatores passíveis de serem
+mudados.
+
+-   Avaliar a pele do paciente e o risco de desenvolver LP;
+-   Manter a pele limpa e seca;
+-   Utilizar colchão adequado para distribuição da pressão;
+-   Utilizar superfícies de apoio como coxins, travesseiros e
+    posicionadores para alívio da pressão;
+-   Posicionar o paciente de forma correta;
+-   Evitar posicionar o paciente sobre dispositivos médicos;
+-   Aplicar cobertura multicamadas com borda de silicone nas
+    proeminências ósseas conforme escala adaptada para o centro
+    cirúrgico, posicionamento durante a cirurgia e avaliação do
+    enfermeiro;
+-   Movimentar a cabeça a cada 02 horas, evitando hiperextensão.
+-   Lubrificar os olhos com pomada e fechá-los com fita microporosa,
+    evitando-se compressão do globo ocular.
+-   O pavilhão auricular não deve ser torcido, evitando-se lesão da
+    cartilagem.
+-   Utilizar braçadeira para repouso dos braços, evitando abdução
+    excessiva.
+-   Utilizar travesseiro sob os joelhos.
+-   Manter pernas paralelas e descruzadas.
+
+O enfermeiro deve avaliar o paciente antes da cirurgia de acordo a
+escala adaptada "**Avaliação de risco para Centro Cirúrgico**" que
+associa a escala de braden e o tempo de cirurgia escala Elpo. Todos os
+pacientes cirúrgicos devem ser considerados com risco de desenvolver LP.
+
+## 18.1. Escala adaptada para avaliação de risco de lesão por pressão
+
+em Centro Cirúrgico O enfermeiro após aplicação da Escala Adaptada
+deverá preencher o impresso **SAEP (Sistematização da Assistência de
+Enfermagem Perioperatória)**, anotando qual o score da avaliação e
+definindo as medidas preventivas cabíveis.
+
+Score da Escala de Elpo Adaptada![](https://www.nucleodoconhecimento.com.br/wp-content/uploads/2018/09/Capturar.png)(<https://apps1.qualiex.com/Docs#>)
+
+# 19. Prevenção em Pronto-Socorro
+
+Os serviços de Pronto Socorro (PS) atendem pacientes em situações de
+urgência e emergência, graves ou potencialmente graves, que necessitam
+de atendimento especializado, recursos humanos e tecnológicos,
+preparados para seu atendimento e recuperação. Ainda, recebem alta
+demanda de pacientes, o que exige um trabalho ágil e eficaz, buscando
+minimizar situações de risco à vida e a redução de danos. Se faz
+necessário a atenção do enfermeiro para avaliação da pele do paciente
+pois muitas vezes o paciente ficará horas na observação até melhora do
+seu quadro clínico ou aguardando internação. As medidas preventivas para
+lesão por pressão se tornam as mesmas durante a internação. - Realizar a
+avaliação do risco de lesão por pressão; - Inspecionar a pele em busca
+de lesões existentes e integridade da pele; - Avaliar quanto tempo o
+paciente ficará na observação e providenciar superfícies de suporte:
+colchão, coxins, travesseiro; - Aplicar curativo para proteção em áreas
+de risco conforme o score da escala de braden; - Avaliar o uso de
+dispositivos médicos e possível pressão nesses locais; - Manter o
+controle da umidade em pacientes em uso de fralda; - Realizar/orientar a
+mudança de decúbito para alívio das áreas de pressão.
+
+# 20. Avaliação nutricional
+
+A nutrição desempenha um papel vital na prevenção e tratamento de lesões
+por pressão (LP), uma vez que todos os tecidos necessitam de macro e
+micronutrientes para promover crescimento, manutenção e cicatrização. A
+importância de identificar o estado nutricional do paciente precocemente
+permite conhecer os riscos, e desta maneira programar ações preventivas
+para o surgimento dessas lesões. A desnutrição tem sido apontada como um
+dos principais fatores de risco no surgimento das LP, principalmente
+pacientes com **IMC \< 18,5kg/m²**; com diminuição de massa magra em
+proeminência dos ossos, gerando uma maior pressão no local. Além desses
+fatores, lesão de medula espinhal e anemia, predispõem o surgimento das
+lesões por pressão. Para traçar o plano terapêutico dos pacientes, é
+utilizada a Escala de Braden aplicada pela equipe de enfermagem
+diariamente. O suporte nutricional é um fator fundamental na
+etiopatogenia das LP. A terapia nutricional tem como objetivo principal,
+garantir as necessidades nutricionais para a manutenção do estado
+nutricional. A oferta adequada de macro e micronutrientes varia de
+acordo com as doenças concomitantes. Uma atenção especial se dá para a
+oferta de proteínas de alto valor biológico, com quantidades maiores
+para indivíduos sadios, a fim de diminuir a fase inflamatória da
+cicatrização, consequentemente diminuindo o risco de infecção, e
+favorecendo a síntese do tecido. A oferta de lipídios, dentre eles os
+ácidos graxos essenciais são de suma importância no processo de
+regeneração tissular, pois são precursores ou componentes de
+fosfolipídeos e prostaglandinas,que participam da constituição da
+membrana celular. A necessidade de vitaminas e minerais seguem as
+quantidades estabelecidas pela Ingestão Diária Recomendada (IDR).
+
+Destacam-se a **vitamina A, C, E, Zinco, Cobre e Selênio**.
+Suplementação Nutricional: para o controle das LP, muitos nutrientes são
+indicados em quantidades superiores às recomendadas pela ingestão
+dietética recomendada (IDR). Devido à importância desses nutrientes no
+tratamento, torna-se imprescindível a suplementação com alimentos ou
+bebidas fortificadas. Uma grande variedade de suplementos nutricionais
+estão disponíveis para promover a proliferação celular, ajudar na
+síntese de colágeno e na contração e remodelação da ferida. A
+suplementação oral enriquecida em arginina parece influenciar de forma
+positiva a cicatrização, melhorando a perfusão e microvascularização
+tecidual, a síntese e deposição de colágeno via prolina e a resposta
+monocítica e mitocítica das células T.
+
+## 20.1. Ações Nutricionais
+
+Aplicação da [triagem nutricional NRS
+2002](https://imgv2-2-f.scribdassets.com/img/document/516476545/original/c6d404607e/1660679220?v=1)
+ou
+[MNA®](https://www.mna-elderly.com/sites/default/files/2021-10/MNA-portuguese.pdf)
+para verificação de risco nutricional ;
+
+-   Avaliação nutricional e retornos de acordo com nível de assistência
+    nutricional;
+-   Definição do diagnóstico nutricional;
+-   Verificação em prontuário eletrônico da classificação de risco que
+    foi atribuída ao paciente (Escala de Braden) em admissão nutricional
+    e a cada atendimento, conforme nível de assistência nutricional;
+-   Prescrição dietética e suplementação nutricional se necessário;
+-   Registro de avaliação nutricional e evolução em prontuário
+    eletrônico conforme Escala de Braden:
+
+Pacientes em tratamento nutricional da LP: seguindo os mesmos critérios
+adotados aos pacientes com risco para LP alto/muito alto.
+
+A hidratação recomendada para os pacientes são: **30 - 35ml/Kg/dia ou
+1ml/kcal** (recomendação para doentes que consomem dietas
+hiperproteicas). A menos que seja contraindicado, em casos de
+insuficiência renal e insuficiência cardíaca em fase terminal, as
+necessidades de hidratação são de 30 ml/Kg/dia, 1 ml/kcal ou no mínimo
+1.500 ml/dia. - No tratamento paliativo, são feitas intervenções para
+propiciar conforto aos pacientes. A intervenção nutricional deve ser
+considerada parte integrante do tratamento da LP. O uso de determinados
+nutrientes podem interferir positivamente no processo de cicatrização .
+
+# 21. Avaliação da Fisioterapia
+
+A equipe de Fisioterapia é responsável pela avaliação diária da condição
+motora e funcional dos pacientes internados em unidade de terapia
+intensiva, unidade de internação e pronto atendimento, visando a
+funcionalidade dos nossos pacientes através de escalas funcionais. A
+avaliação será realizada diariamente para quantificação e direcionamento
+da terapia a ser desenvolvida, buscando a manutenção ou recuperação
+funcional. A equipe promove os princípios da mobilização e reabilitação
+intra hospitalar através da classificação pela [escala de mobilidade
+PERME](https://cdn.publisher.gn1.link/jornaldepneumologia.com.br/images/2610_18_10_9_2015_0301_tabela2.jpg),
+pela qual nos direciona para os exercícios que podem ser:
+
+-   Exercícios globais ativos no leito;
+-   Exercícios globais ativos resistidos no leito;
+-   Sedestação na beira do leito para treino de controle de tronco;
+-   Sedestação em poltrona;
+-   Ortostatismo; Deambulação;
+-   Treinamento cardiorrespiratório;
+-   Entre outros.
+
+Vale destacar que o objetivo da equipe de Fisioterapia sempre é atingir
+ou manter o máximo de [**independência
+funcional**](https://www.researchgate.net/profile/Daniel-Cruz-26/publication/302934477/figure/fig1/AS:360666750832640@1463001062620/Figura-1-Independencia-funcional-na-tetraplegia-C6-em-sete-meses-de-reabilitacao.png)
+dos pacientes, pois essa variável impacta diretamente no tempo de
+internação hospitalar e até nas complicações pós alta hospitalar que
+poderá ser decisiva para uma reinternação.
+
+## 21.1. Escala de Mobilidade PERME
+
+![](https://cdn.publisher.gn1.link/jornaldepneumologia.com.br/images/2610_18_10_9_2015_0301_tabela2.jpg)
+
+É um instrumento de avaliação utilizado pela equipe de fisioterapia para
+quantificação da mobilidade atual, ou seja, pela qual o paciente está
+apresentando no momento da internação e quantificado pelo avaliador. A
+escala é dividida em: Estado mental: Potenciais barreiras para
+mobilidade; Força funcional; Mobilidade no leito; Transferências;
+Marcha; Endurance.
+
+-   Tubo Orotraqueal (TOT),
+-   cateter central inserido perifericamente (CCIP),
+-   Sonda de Gastrostomia Percutânea (SGP),
+-   Sonda de Jejunostomia Percutânea (SJP),
+-   Cateter Epidural (Patient Controlled Analgesia - PCA),
+-   Balão intra aórtico (BIA),
+-   dispositivo de assistência ventricular esquerda (DAVE),
+-   Terapia de substituição renal contínua (TSRC),
+-   Curativo a vácuo para feridas (VAC).
+
+Após a avaliação o Fisioterapeuta pontua (Escala de Perme) o paciente e
+o objetivo será traçado para manutenção desta pontuação até a alta ou
+melhora da sua pontuação através do planejamento do tratamento. Além
+disso trabalhamos com metas diárias que são decididas e revistas pelos
+fisioterapeutas após a pontuação do paciente que podem ser:
+
+-   Treino para mudança de decúbito no leito;
+-   Manutenção da amplitude de movimento;
+-   Treinamento muscular periférico no leito;
+-   Sedestação na beira do leito;
+-   Sedestação na poltrona;
+-   Ortostatismo;
+-   Treino de equilíbrio em pé;
+-   Treino de Marcha Domiciliar ou Comunitária (Manter deambulação
+    independente).
+
+Caso alguma meta não seja realizada pela equipe deveremos justificar o
+motivo que poderá ser: Recusa do paciente; Limitação clínica; Barreiras
+(Justificar); Outros(Justificar).
+
+# 22. Tratamento
+
+A partir do surgimento de uma lesão, o organismo tende a promover um
+processo de reconstituição do tecido denominado cicatrização.
+[Cicatrização de
+feridas](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-41PYi2Uk-tN_N6k8tQmYN7m9K42le92eoKYvxtSdudY0p0pFvCeuk9bWON2kPPUf2kk&usqp=CAU)
+é um processo dinâmico e regulado por mecanismos celulares, humorais e
+moleculares, que se iniciam após a lesão e podem durar anos, a depender
+do grau de comprometimento do tecido cutâneo. A avaliação dos pacientes
+com feridas embasa a seleção de intervenções apropriadas. Por ser um
+processo multifatorial é importante considerar durante a avaliação, não
+somente fatores locais, mas também fatores sistêmicos como a etiologia
+da ferida, condições nutricionais e presença de doenças podem
+influenciar este processo. Trata-se de uma avaliação global do
+indivíduo, não somente da ferida, na qual a avaliação do paciente de
+modo integral torna-se indispensável, pois sua condição clínica terá uma
+implicação direta no sucesso desse processo. A adequada avaliação
+possibilita a adoção de condutas a fim de interferir nas situações que
+possam ser prejudiciais e deste modo, permitir o alcance da completa
+cicatrização. Por esse motivo, destaca-se a importância da utilização de
+instrumentos que abordam todos os elementos do processo de cicatrização,
+além da avaliação integral do indivíduo.
+
+## 22.1 Avaliação da lesão por pressão e fluxograma de tratamento
+
+Avaliação inadequada ou imprecisa pode levar ao atraso na cicatrização,
+dor, aumento do risco de infecção, uso inadequado de curativos e redução
+na qualidade de vida dos pacientes. A avaliação da lesão pode ser
+realizada utilizando o instrumento [TIMERS - Wound Bed Preparation
+(WBP)](https://www.smith-nephew.com/documents/benefra/time/29664-nl%20vlu-t.i.m.e.-cdst-v8%200422_lr.pdf) -
+Preparo do leito da ferida. O acrônimo TIMERS é uma sigla utilizada para
+avaliar as condições no leito da ferida que atrasam a cicatrização e
+fornece diretrizes de tratamento para corrigi-las: **T: Tecido inviável:
+tecido necrótico; I: Infecção / Inflamação; M: Desequilíbrio da Umidade;
+E: Margem não avança; R: Reparação/Regeneração; S: Fatores sociais e
+relacionados ao paciente.** Abaixo segue estrutura de tratamento para as
+lesões por pressão, de acordo com o estágio, condições da ferida
+seguindo instrumento TIMERS e coberturas padronizadas na instituição.
+
+Importante que a avaliação e tratamento das feridas seja realizada de
+forma interdisciplinar, buscando o melhor plano terapêutico para cada
+paciente.
+
+## 22.2 Avaliação da Equipe Médica (Clínica Médica, Cirurgia Plástica, Cirurgia Vascular)
+
+-   Solicitar *exames laboratoriais* para a avaliação bioquímica;
+-   *Monitorar e intervir* nos fatores intrínsecos e sistêmicos do
+    paciente que o predispõe ao risco de LP e aos pacientes com lesões
+    já existentes;\
+-   Prescrever *terapias tópicas* que contenham antibiótico, antifúngico
+    ou curativos de alto custo como terapia por pressão negativa;
+-   Realizar *desbridamento cirúrgico* em LP estágios 3 e 4 com
+    complicações e sem evolução;
+-   Intervir nos casos diagnosticados ou suspeitos de LP estágio 4, para
+    *investigação de osteomielite*. À cargo das especialidades de
+    ortopedia e infectologia;
+-   *Intervir cirurgicamente na LP não infectada* que esteja com borda
+    descolada, enrolada (epíbole), fibrótica e hipergranulação; com loja
+    e/ou com perda substancial de tecido. À cargo da equipe de cirurgia
+    plástica;\
+-   Discutir com a equipe de *cirurgia plástica as lesões por pressão*
+    com as possibilidades de retalho.
+-   Solicitar a *cultura microbiológica da lesão*, quando observado
+    sinais sugestivos de infecção; Prescrever terapia antimicrobiana
+    sistêmica, quando necessário;
+-   Pacientes com LP em calcâneos, realizar *investigação da condição
+    vascular* e intervir quando indicado. À cargo da equipe de cirurgia
+    vascular.
+
+## 22.3 Setor farmácia
+
+Compete à equipe de farmácia a *previsão e provisão dos materiais* de
+prevenção e tratamento para as lesões por pressão, assim como a *compra
+e distribuição dos materiais* solicitados ao setor. Se faz necessário o
+controle rigoroso do local de armazenamento e controle de validade dos
+produtos.
+
+# 23. Segurança do Paciente
+
+Todo paciente deverá ser avaliado sistematicamente na admissão. Essa
+avaliação deve levar em consideração as fragilidades, vulnerabilidades e
+fatores de risco para o desenvolvimento de alterações de pele. O
+Analista de segurança do paciente realiza semanalmente **auditoria no
+prontuário eletrônico**, para isso elege aleatoriamente 17 prontuários
+dos pacientes internados buscando registros do cumprimento dessa
+avaliação nas primeiras 24h de internação. Toda lesão inicial na unidade
+deve ser **notificada na plataforma Qualiex - Sistema Tracker**. Após
+notificação a ocorrência é encaminhada ao Analista de segurança do
+paciente da unidade, o mesmo realizará Aprovação e Análise de causa da
+ocorrência. Na análise de causa é dever do Analista de segurança do
+paciente realizar investigação do evento, as variantes que contribuíram
+para o evento com foco na melhoria do processo e mitigação dos riscos.
+Essa investigação deverá ser baseada em evidências e conhecimentos
+científicos, fazendo acareações com os colaboradores envolvidos, buscas
+em prontuários físicos ou eletrônicos, levando em consideração as
+condições clínicas do paciente. Esse evento é inserido na planilha de
+rastreabilidade para ser monitorado, acompanhado e se necessário for ser
+consultado posteriormente. Esse evento também será inserido no
+**indicador da unidade**. Após análise de causa, o Analista de segurança
+do paciente direciona a ocorrência para o Gestor da unidade, que por sua
+vez irá realizar o plano de ação para eliminar ou mitigar próximos
+eventos. As ocorrências devem ser discutidas e os planos de ações
+apresentados para o núcleo de segurança do paciente local em reunião
+mensal que é realizada até o dia 10 do mês subsequente. As lesões devem
+ser notificadas aos **órgãos regulatórios**, assim como as III e IV por
+se tratarem de Never Events. As LPs I e II ficam em monitoria por 60
+dias e as LPs III e IV ficam em monitoria por 6 meses.
+
+## 23.1. Indicadores de qualidade
+
+Indicador de qualidade é uma ferramenta utilizada para medir e monitorar
+o desempenho assistencial. Auxilia na gestão e sinaliza a assertividade
+dos planos de ações para mitigar eventos adversos. Definição: Relação
+entre o número de casos novos de pacientes com Lesão por pressão no mês
+e o número de pacientes avaliados com risco de adquirir Lesão por
+pressão - dia no mês, multiplicado por 100. Equação para cálculo:
+
+        Incidencia de LP = Número de casos novos de Pacientes com Lesão Por Pressão no Mês x 100
+                           ______________________________________________________________________
+                   
+                                      Número de Pacientes expostos ao risco de adquirir LP
+
+# 24. Acompanhamento Pós-Tratamento
+
+Todos os pacientes com alta hospitalar devem receber *orientação de alta
+e o encaminhamento adequado* para para seguimento do tratamento das
+lesões de acordo com os segmentos abaixo:
+
+## 24.1. Ambulatório Cuidados com a Pele
+
+O Ambulatório presta serviço especializado no **tratamento de feridas e
+estomias**, com uma equipe multidisciplinar composta por equipe de
+enfermagem, equipe vascular e equipe de cirurgia plástica. O atendimento
+é voltado para pacientes não acamados, com possibilidade de atendimento
+ambulatorial para seguimento no tratamento da lesão até sua
+cicatrização.
+
+## 24.2. Programa Assiste
+
+O programa Assiste **presta serviços domiciliares** por liberalidade da
+empresa, e atua conta com de acordo com o indicado é realizado
+atendimento equipe multidisciplinar, composta por equipe de enfermagem,
+equipe médica, fisioterapia, nutrição e fonoaudiologia. Também conta com
+equipes terceirizadas para auxiliar nos atendimentos. É voltado para o
+atendimento dos pacientes mais dependentes, com perfil acamado.
+
+## 24.3. Hospital Credenciado
+
+Alguns pacientes recebem alta e são encaminhados aos hospitais
+credenciados para **auxílio no desmame dos dispositivos**, podendo estes
+terem lesões por pressão e serem acompanhados por essa equipe. Após alta
+da rede credenciada, ele poderá ser encaminhado ao Ambulatório ou
+Programa Assiste.
+
+## 24.4. Agendamento Ambulatório Cuidados com a Pele
+
+Ao receberem alta hospitalar, os pacientes com lesões e perfil
+ambulatorial devem ter **agendamento no Ambulatório Cuidados com a
+Pele** para o **acompanhamento e tratamento**. Esse agendamento será
+realizado pela equipe administrativa do hospital e informado data e
+horário ao paciente antes da alta pelo enfermeiro do setor.
+
+## 24.5 Avaliação de alta hospitalar pela equipe multiprofissional
+
+<https://apps1.qualiex.com/Docs#>
+
+## 24.6. Orientação de alta hospitalar Nutrição
+
+Todos os pacientes com lesão por pressão devem receber orientações
+nutricionais no pré alta, com o objetivo de **esclarecer os cuidados
+nutricionais** necessários para que favoreça o processo cicatricial. O
+Nutricionista realiza a orientação de uma alimentação balanceada, rica
+em alimentos com potencial anti inflamatórios, com maior teor de
+proteínas e com diminuição de carboidratos simples. Orienta-se
+hidratação, com sucos, chás sem açúcar e água, conforme a
+individualização de cada paciente. A indicação de suplementos
+nutricionais, compostos por arginina, zinco, vitamina C, A e E, selênio
+e carotenóides, a fim de favorecer o processo cicatricial, é indicado,
+conforme avaliação do Nutricionista. Orientações essas entregues em
+impresso próprio. Encerrando o processo com evolução em prontuário.
+
+## 24.7. Orientação de alta hospitalar Fisioterapia
+
+Todos os pacientes e cuidadores devem receber **orientações relativas à
+prevenção de comprometimentos osteoarticulares e complicações
+respiratórias** na alta hospitalar, as orientações são:
+
+-   Além da correção de fatores citados pela equipe multiprofissional,
+    para prevenir, ou auxiliar no tratamento de úlceras por pressão
+    devem atentar o cuidador quanto a proteção para as proeminências
+    ósseas, posicionamento no leito, mobilização de 2 em 2 horas e
+    assentar o paciente o maior tempo possível. Em termos de colchão o
+    mais adequado é o pneumático, no entanto a família pode optar por
+    outro caso não possa adquirir o colchão pneumático, sendo então uma
+    opção o casca de ovo, não sendo tão eficaz quando comparado ao
+    pneumático.
+
+-   Orientar sobre processo degenerativo da musculatura natural do idoso
+    e a piora quando associado ao imobilismo, na imobilidade esse
+    processo é mais intenso e acelerado, tais mudanças resultam em
+    atrofia muscular, sendo prevenidos com mobilização precoce
+    posicionamento no leito com coxins. A fim de prevenir Trombose
+    venosa profunda, a posição supina, a contratura de membros
+    inferiores quadril e joelho e a ausência do efeito de bomba da
+    musculatura da panturrilha predispõe a estase venosa profunda. A
+    prevenção é feita com movimentação frequente de membros inferiores.
+
+-   Salientar que devem prevenir complicações respiratórias e auxiliar
+    na resolução de patologias pulmonares já instaladas. Promover um
+    padrão respiratório mais eficaz, bem como orientar uma série de
+    técnicas, exercícios e hábitos que visam proporcionar ao paciente
+    meios pelos quais ele possa controlar danos, além de incentivar com
+    técnicas respiratórias a manutenção do reflexo de tosse.
+
+## 24.8. Orientação de alta hospitalar Enfermagem
+
+Todo paciente com lesão por pressão ou com potencial de desenvolvê-la
+deve receber orientações da equipe multidisciplinar no momento da alta,
+com objetivo de prevenir o surgimento dessas lesões no domicílio e
+esclarecer dúvidas sobre o **cuidado correto** caso essas já existam.
+Medidas já citadas anteriormente nesta política devem ser transmitidas
+aos familiares e/ou cuidadores como:
+
+-   Orientar cuidados no banho e higienização da pele. Evitar umidade
+    excessiva causada pela presença de urina, transpiração ou drenagem
+    de ferida;
+
+-   Fazer uso de hidratantes corporais todos os dias, evitando massagear
+    as áreas de risco para lesão (proeminências ósseas);
+
+-   Manter uma boa alimentação e ingestão hídrica, exceto nos casos em
+    há alguma contra-indicação;
+
+-   Mudar a posição do paciente a cada 2 horas. Se o paciente já tiver
+    uma lesão instalada, evitar pressão neste local;
+
+-   Fazer uso de coxins, travesseiros ou posicionadores apropriados,
+    evitando sobrecarga em áreas de proeminências ósseas. Evitar elevar
+    a cabeceira em mais de 30 graus;
+
+-   Orientar os cuidados na mobilização do paciente, evitando fricção e
+    cisalhamento, bem como o uso de colchões adequados;
+
+-   Observar diariamente a pele do paciente. O primeiro sinal de lesão
+    por pressão seria a hiperemia (região avermelhada que permanece
+    mesmo mudando de posição);
+
+-   Orientar familiar/cuidador a identificar sinais de aparecimento de
+    lesões por pressão e contactar equipe de acompanhamento em casos
+    positivos;
+
+-   Orientar familiar/cuidador quanto ao manejo e cuidados das lesões
+    por pressão já instaladas, bem como aos sinais de agravamento das
+    mesmas e contactar equipe de acompanhamento caso existam.
+
+## 24.9. Atendimento Domiciliar
+
+Durante a internação hospitalar, o paciente é avaliado por uma equipe
+multidisciplinar, que através de uma ferramenta de avaliação
+[NEAD](https://ptdocz.com/doc/1889121/clique-aqui--e-confira-o-novo-escore-de-avalia%C3%A7%C3%A3o-nead.)
+(Tabela de Avaliação para Planejamento de Atenção Domiciliar),
+identifica qual a indicação técnica para assistência domiciliar de
+acordo com as condições clínicas do paciente para a alta hospitalar.
+Dentre as diferentes indicações técnicas, o paciente pode apresentar
+indicação para procedimentos pontuais exclusivos ou atendimento
+domiciliar multiprofissional os quais podem incluir a realização de
+curativos domiciliares com frequência e condutas terapêuticas avaliadas
+pela equipe de Enfermagem. Ao decorrer da assistência domiciliar, o
+paciente será acompanhado periodicamente pela equipe de Enfermagem do
+atendimento domiciliar de modo que as terapias propostas possam ser
+adequadas e alteradas sempre que houver a indicação técnica pela
+Enfermagem visando a melhor evolução das lesões e capacitação da família
+para cuidados diários. Na avaliação domiciliar a equipe de Enfermagem
+realiza:
+
+-   Avaliação inicial para identificar risco de lesão por pressão e
+    dermatites associada a incontinências;
+-   Orientar paciente e/ou familiar sobre medidas de prevenção de lesão
+    por pressão, bem como adaptar o domicílio para proporcionar um
+    ambiente seguro;
+-   Realizar prescrição de Enfermagem do passo a passo do curativo e
+    orientar paciente e familiar sobre a importância desse cuidado;
+-   Envolver família e/ou cuidador no processo do cuidado com a pele;
+-   Realizar registro em prontuário dos achados clínicos, prescrição do
+    curativo e orientações de medidas de prevenção;
+-   Reagendar visita de Enfermagem conforme complexidade das lesões;
+-   Avaliar necessidade de concessão de curativo de acordo com a
+    complexidade.
+
+------------------------------------------------------------------------
+
+```{=html}
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;text-align: center;}
+</style>
+```
+```{css }
+.infobox{
+padding: 1em 1em 1em 4em;
+margin-bottom: 10px;
+border: 2px solid orange;
+border-radius: 10px;
+background:#f5f5f5 5px center/3em no-repeat;
+}
+.caution{
+background-image:url("photo/caution_iStock_1398787408.png")
+}
+```
+
+```{=html}
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;text-align: center;}
+</style>
+```
+::: blue
+A existência da diretriz não anula a autonomia profissional -- o
+profissional é sempre responsável pelo que faz ao utilizar ou não um
+protocolo.
+:::
+
+# 25. Referências bibliográficas
+
+1. [Garbuio DC, Zamarioli CM, Silva NCM, Oliveira-Kumakura ARS, Carvalho EC. Instrumentos para avaliação da cicatrização de lesões de pele: revisão integrativa. Rev. Eletr. Enf. Internet. 2018 Disponível em: https://doi.org/10.5216/ree.v20.49425](https://revistas.ufg.br/fen/article/view/49425/32640)
+
+2. [European Pressure Ulcer Advisory Panel, National Pressure Injure Advisory Panel na Pan Pacific Presure Injure Alliance. Prevention and Treatment of Pressure Ulcers/Injures: Clinical Practice Guideline. The International Guideline. Emily Haesler (Ed.). EPUAP/NPIAP/PPPIA: 2019.](https://www.biosanas.com.br/uploads/outros/artigos_cientificos/127/956e02196892d7140b9bb3cdf116d13b.pdf)
+
+3. [Pressure Injury Prevention - PIP Tips for Prone Positioning. NPIAP 2020; Domansky, RC; BORGES, EL; Manual de prevenção de lesões de pele. Recomendações baseadas em evidências. Rio de Janeiro: Rubio, 2012;5:91-117.](https://issuu.com/editorarubio/docs/issuu_manual_para_preven____o_de_le)
+
+4. [Kottner J, Beeckman D. Incontinence-associated dermatitis and pressure ulcers in geriatric patients. G Ital Dermatol Venereol. 2015;150(6):717-729.](https://pubmed.ncbi.nlm.nih.gov/26186379/)
+
+5. [Gray M, Giuliano KK (2018) Incontinence-associated dermatitis, characteristics and relationship to pressure injury: a multisite epidemiologic analysis. Journal of Wound, Ostomy and Continence Nursing; 45: 1, 63-67.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5757660/)
+
+6. [Ministério da Saúde - Brasil; Anvisa; Centro colaborador para a Qualidade do Cuidado e a Segurança do Paciente. Protocolo para a Prevenção de Úlceras por Pressão, 2014.](https://bvsms.saude.gov.br/bvs/publicacoes/documento_referencia_programa_nacional_seguranca.pdf)
+
+7. [VERDÚ, J; PERDOMO, E. Nutrição e Feridas Crônicas. Série de Documentos Técnicos GNEAUPP nº12. Grupo Nacional para el Estudio y Asesoramiento en Úlceras por Présion y Heridas Crónicas. Logrono, 2016.](https://www.alzheimeruniversal.eu/wp-content/uploads/2014/05/Manual-prevencion-ulceras-presion.pdf)
+
+8. [PARANHOS, W.Y. Avaliação de risco para úlcera de pressão por meio de escala de Braden, na língua portuguesa tese de mestrado. São Paulo: USP, 1999](http://www.ee.usp.br/reeusp/upload/pdf/799.pdf)
+
+9. [BLANES, L; FERREIRA, L.M. Prevenção e tratamento de úlcera por pressão. 1. ed. São Paulo: Atheneu, 2014.](http://eerp.usp.br/feridascronicas/recurso_educacional_lp_2_5.html)
+
+10. [BRASIL. Ministério da Saúde; Agência Nacional de Vigilância Sanitária. Anexo 02: Protocolo para prevenção de úlcera por pressão 2013.](https://www.hospitalsantalucinda.com.br/downloads/prot_prevencao_ulcera_por_pressao.pdf) 
+
+11. [INSTITUTE FOR HEALTHCARE IMPROVEMENT. How-to-Guide: Prevent Pressure Ulcers. Cambridge, MA: Institute for Healthcare Improvement; 2011.Disponível em: www.ihi.org. Acesso em: 31 ago 2016.](https://www.ihi.org/education/Conferences/National-Forum/Pages/default.aspx?utm_campaign=us-6292022--forum2022-all-dmt-b--kt-text(sem)&utm_content=link----virtual2&utm_source=google&utm_medium=cpc&utm_term=awareness--registernow&gclid=Cj0KCQjwguGYBhDRARIsAHgRm4_ahLic86EzkD7xZ3i-NwjUcYeKz_WCnpOfcuaCBihr3odjX7duuC8aAoO4EALw_wcB)
+
+12. [IBSP. Muda terminologia para úlcera por pressão. Disponível em: https://segurancadopaciente.com.br/noticia/muda-terminologia-para-ulcera-por-pressao-confira/.Acesso em: 08 ago. 2016.](https://segurancadopaciente.com.br/noticia/muda-terminologia-para-ulcera-por-pressao-confira/)
+
+13. [LOPES, C.M.M; HAAS, V.J; DANTAS, R.A.S; et al. Escala de avaliação de risco para lesões decorrentes do posicionamento cirúrgico. Rev. Latino-Am. Enfermagem vol.24 Ribeirão Preto 2016 Epub Aug 29, 2016.](https://www.scielo.br/j/rlae/a/f9gwZMD7VZ9jVCXGVpTfc9C/?lang=pt&format=pdf)
+
+14. [Scarlatti, K.C. , Michel, J.L.M. , Gamba, M.A. , Gutiérrez, M.G.R. Úlcera por pressão em pacientes submetidos à cirurgia: incidência e fatores associados. Rev Esc Enferm USP 2011; 45(6):1372-9](https://www.scielo.br/j/reeusp/a/TfTLQYZ5CjhxRLvdGM8VRgR/?format=pdf&lang=pt)
+
+15. [Documento de Consenso da World Union of Wound Healing Societies (WUWHS). O papel das coberturas na prevenção da lesão por pressão. Wounds International, 2016.](http://sobende.org.br/pdf/WUHS%202016/08.pdf)
+
+16. [CAMPANILI, T.C.G.F , SANTOS, V.L.C.G., PULIDO, K.C.S. et al.Incidência de úlceras por pressão em pacientes de Unidade de Terapia Intensiva Cardiopneumológica. Rev Esc Enferm USP · 2015; 49(Esp):7-14.](https://www.scielo.br/j/reeusp/a/xbJY6BTYkSp4xgVNxMvh4NC/?lang=pt)
+
+17. [Souza MF, Zanei SS, Whitaker IY. Risco de lesão por pressão em UTI: adaptação transcultural e confiabilidade da EVARUCI. Acta Paul Enferm. 2018;31(2):201-8.](https://www.scielo.br/j/ape/a/vvckHf6np6HRXRtSspdVdHD/abstract/?lang=pt)
+
+18. [Revista Brasileira de Obesidade, Nutrição e Emagrecimento, São Paulo. Suplementar 2. v.11. n.68. p.699-709. Jan./Dez. 2017. ISSN 1981-9919.](http://webcache.googleusercontent.com/search?q=cache:RrXpbpLaP7EJ:www.rbone.com.br/index.php/rbone/article/download/632/494/&cd=1&hl=pt-BR&ct=clnk&gl=br)
+
+19. [Silva, R.C.L.; Figueiredo, NMA; Meireles, IB. Feridas: fundamentos e atualizações em enfermagem. 2ºed. São Caetano do Sul, SP: Yedis editora, 2007.](https://www.amazon.com.br/Feridas-Fundamentos-Atualiza%C3%A7%C3%B5es-em-Enfermagem/dp/8577282139)
+
+20. [Protocolo de Cuidados de Feridas. Secretaria Municipal de Saúde. Prefeitura de Florianópolis, 2008.](https://www.saudedireta.com.br/docsupload/134049915626_10_2009_10.46.46.f3edcb3b301c541c121c7786c676685d.pdf)
+
+21. [Mandelbaum, et al. Cicatrização: conceitos atuais e recursos auxiliares. Anais Bras. Dermatol. Rio de Janeiro, 78(5): 525 - 542, 2006.](https://www.scielo.br/j/abd/a/RghxLv5pwvmpv7hzt85wXvm/abstract/?lang=pt)
+
+22. [Franco, D.; Gonçalves, L.F. Feridas cutâneas: a escolha do curativo ideal. Rev. Col. Bras.Cir. 35(3): 202 -- 206, 2008.](https://www.scielo.br/j/rcbc/a/LFCNqqNQH9zZqjJgNLCYkws/?lang=pt)
+
+23. [PERRONE, F et.al. Estado nutricional e capacidade funcional na úlcera por pressão em pacientes hospitalizados Rev. Nutr, v.24, n.3, p.431-438, 2011.](https://www.scielo.br/j/rn/a/Qbbr5BWd9hLpcdsnGX56B7v/?lang=pt)
+
+24. [SERPA, L.F; SANTOS, V.L.C.G. Desnutrição como fator de risco para o desenvolvimento de úlceras por pressão. Acta Paul Enferm, v.21, n.2, p. 367- 369, 2008.](https://acta-ape.org/wp-content/uploads/articles_xml/1982-0194-ape-S0103-21002008000200022/1982-0194-ape-S0103-21002008000200022-pt.x16677.pdf)
+
+25. [DUNCAN, K. Preventing pressure ulcers: the goal is zero. J Comm J Qual Patient Saf, v.33, n.6, p.605- 610, 2007.](https://www.sciencedirect.com/science/article/abs/pii/S1553725007330699?via%3Dihub)
+
+26. [DEMLING,R.H. Nutrition, anabolism, and the wound healing process: an overview. Eplasty, v.12, n.9, 2009.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2642618/)
+
+27. [DESNEVES, K.J.; TODOROVIC, B.E.; CASSAR, A.; CROWE, T.C. Treatment with supplementary arginine, vitamin C and zinc in patients with pressure ulcers: a randomised controlled trial. Clin Nutr, v.24, n.6, p. 979-87, 2005.](https://pubmed.ncbi.nlm.nih.gov/16297506/)
+
+28. [BERGER, M.M. et al. Trace element supplementation after major burns modulates antioxidant status and clinical course by way of increased tissue trace element concentrations. Am J.Clin Nutr, v.85, n.5, p.1293-300, 2007.](https://pubmed.ncbi.nlm.nih.gov/17490965/)
+
+29. [Ten top tips: preventing pressure ulcers in the surgical patient. Wounds International 2014 \| Vol 5 Issue 4 \| ©Wounds International 2014.](https://webcache.googleusercontent.com/search?q=cache:TeDGBa5kkqwJ:https://www.woundsinternational.com/resources/details/ten-top-tips-preventing-pressure-ulcers-in-the-surgical-patient&cd=2&hl=pt-BR&ct=clnk&gl=br)
+
+30. [Atkin L, Bućko Z, Conde Montero E, Cutting K, Moffatt C, Probst A, Romanelli M, Schultz GS, Tettelbach W. Implementing TIMERS: the race against hard-to-heal wounds. J Wound Care 2019; 28(3 Suppl 3):S1--S49.](https://pubmed.ncbi.nlm.nih.gov/30835604/)
+
+31. [Protocolo de Cuidados de Feridas. Secretaria Municipal de Saúde. Prefeitura de Florianópolis, 2008.](http://www.pmf.sc.gov.br/arquivos/arquivos/PDF/PROTOCOLO%206%20SMS%20ATUALIZADO.pdf)
+
+32. [Mandelbaum, et al. Cicatrização: conceitos atuais e recursos auxiliares. Anais Bras. Dermatol. Rio de Janeiro, 78(5): 525 - 542, 2006.](https://www.scielo.br/j/abd/a/nL3Wsv5LbQN9V7QYwtkc5yh/abstract/?lang=pt)
+
+33. [Franco, D.; Gonçalves, L.F. Feridas cutâneas: a escolha do curativo ideal. Rev. Col. Bras.Cir. 35(3): 202 -- 206, 2008.](https://www.scielo.br/j/rcbc/a/LFCNqqNQH9zZqjJgNLCYkws/?lang=pt)
+
+34. [EBSERH. Prevenção de Tratamento de Lesão por Pressão. Protocolo Núcleo de Protocolos Assistenciais Multiprofissionais. Hospital das Clínicas, 08/2018.](https://webcache.googleusercontent.com/search?q=cache:E4JGKSkNG24J:https://www.gov.br/ebserh/pt-br/hospitais-universitarios/regiao-sudeste/hc-uftm/documentos/protocolos-assistenciais/prevencao-e-tratamento-de-lesao-por-pressao-protocolo-nucleo-de-protocolos-assistenciais-multiprofissionais-08-2018-versao-2.pdf&cd=1&hl=pt-BR&ct=clnk&gl=br)
+
+35. [Borges, D.L., Rapello, G.V.G., Andrade, F.M.D. Posição prona no tratamento da insuficiência respiratória aguda na Covid-19. ASSOBRAFIR. 2020.](https://assobrafir.com.br/wp-content/uploads/2020/03/ASSOBRAFIR_COVID-19_PRONA.v3-1.pdf)
+
+36. [Bain M, Hara J, Carter MJ. The Pathophysiology of Skin Failure vs. Pressure Injury: Conditions That Cause Integument Destruction and Their Associated Implications. Wounds. 2020 Nov;32(11):319-327. PMID: 33465042.](https://pubmed.ncbi.nlm.nih.gov/33465042/)
+
+37. [Ramalho, A.O.; Freitas, P.S.S.; Moraes, J.T.; Nogueira, P.C. Reflexões sobre as recomendações para prevenção de lesões por pressão durante a pandemia de covid-19. ESTIMA, Braz. J. Enterostomal Ther., 2020, 18: e2520.](<https://doi.org/10.30886/estima.v18.940_PT>)
+
+38. [Lesão por pressão: fator frequente e evitável em ambiente hospitalar. Revista Nursing, 2021; 24 (279): 6013-6014.](https://revistas.mpmcomunicacao.com.br/index.php/revistanursing/article/view/1706)
+
+39. [ROCHA, M.M.R.D; SANTOS, M.J.F.D. Enfermagem no manejo com paciente com COVID-19 em pronação e prevenção de lesão por pressão. Brazilian Journal of Health Review. Curitiba, v.4, n.6, p. 26783-26791 nov./dec. 2021.](https://brazilianjournals.com/ojs/index.php/BJHR/article/view/40401)
+
+40. [Manejo do paciente com COVID-19 em pronação e prevenção de Lesão por Pressão. Escola Superior de Ciências da Saúde, da Fundação de Ensino e Pesquisa em Ciências da Saúde -- FEPECS, Programa de Pós-Graduação - Residência Multiprofissional em Saúde do Adulto e do Idoso](https://escsresidencias.emnuvens.com.br/hrj/article/view/30)
+
+41. [ROSA, T.S., SANTOS, V.L.C.G., RAMALHO, A.O., NOGUEIRA, P.C. Acute Skin Failure e Lesão por Pressão em paciente com COVID-19, São Paulo, v19 e 0521, 2021.](https://pesquisa.bvsalud.org/portal/resource/pt/biblio-1178332)
+
+42. [CORDEIRO, F.R., TRISTAO, F.S., ZILMER, J.G.V., et al. Avaliação e cuidados com a pele no final da vida. REVISTA DE ENFERMERÍA BASADA EN LA EVIDENCIA. Rev. Evidentia 2019, v16: e12334.](https://wp.ufpel.edu.br/francielefrc/files/2019/04/artigopeleefinaldevida.pdf)
+
+43. [SANTOS, V.L.C.G. SCALE - Modificações da Pele no final da vida. Rev. Estima, v. 7, n. 3, 2009.](SANTOS, V.L.C.G. SCALE - Modificações da Pele no final da vida. Rev. Estima, v. 7, n. 3, 2009.)
+
+44. [NPIAP - NATIONAL PRESSURE INJURY ADVISORY IAP PANEL. Deep Pressure Injury or an imposter? 2021. Acesso: <https://woundvision.com/npiap-imposter/>, 20/01/22 às 09:30.](https://woundvision.com/npiap-imposter/)
+
+45. [WOUNDCLINIC. Awareness of COVID-19 Skin and Mucosal Manifestations.2021. Acesso: <https://www.hmpgloballearningnetwork.com/site/twc/awareness-covid-19-skin-and-mucosal-manifestations> 20/01/22 às 10:02.](https://www.hmpgloballearningnetwork.com/site/twc/awareness-covid-19-skin-and-mucosal-manifestations)
+
+46. [BARBOSA, S.J., SOARES, S.C.L., QUEIROZ, A.G.S., et al.Lesão por pressão relacionada a dispositivos médicos em unidade de terapia intensiva.Revista eletrônica Acervo Saúde. REAS. Cacoal-RO. Vol. 13 (11), 2021.](https://acervomais.com.br/index.php/saude/article/view/9093)
+
+# Informações de Contato
+
+-   Web: <https://www.preventsenior.com.br>
+
+-   Email:
+    [priscila.pacheco\@preventsenior.com.br](mailto:antonio.sergio@preventsenior.com.br){.email}
+
+-   Phone: +55 (11) 99556 3262
+
+-   Email:
+    [camila.velludo\@preventsenior.com.br](mailto:antonio.sergio@preventsenior.com.br){.email}
+
+-   Email:
+    [ana.galdino\@preventsenior.com.br](mailto:antonio.sergio@preventsenior.com.br){.email}
+
+```{=html}
+<style>
+div.blue { background-color:#e6f0ff; border-radius: 5px; padding: 20px;text-align: text-align: center;}
+</style>
+```
+::: blue
+<p style="text-align: center;">
+
+[<b>Sistema de Gestão da Qualidade, Prevent Senior,
+2022.</b>]{style="color: #004c6e;"}
+
+</p>
+
+<!-- The <b> tag specifies bold text without any extra importance.  -->
+:::
+
+<p style="text-align: center;">
+
+A work by <a href="https://rmarkdown.rstudio.com/">R Markdown</a>
+
+</p>
+
+</p>
+
+<p style="text-align:center;">
+
+![](https://www.rstudio.com/assets/img/icon-rstudio.svg){width="10%"}
+![](https://www.rstudio.com/assets/img/icon-rstudio-team.svg){width="10%"}
+![](https://www.rstudio.com/assets/img/icon-connect.svg){width="10%"}
+![](https://rmarkdown.rstudio.com/docs/reference/figures/logo.png){width="10%"}
+
+</p>
+
+<p style="text-align: center;">
+
+[<en>RStudio 2022.02.1 Build 461 © 2009-2022 RStudio,
+PBC.</en>]{style="color: ##004c6e;"}
+
+</p>
+
+</p>
+
+<hr>
+
+------------------------------------------------------------------------
+
+```{r include=TRUE, fig.pos = "H",fig.align = "center", fig.height = 2,fig.width = 4}
+
+id_generation <- UUIDgenerate()
+qr <- qr_code(id_generation)
+plot(qr)
+
+```
+
+</p>
+
+```{=html}
+<p style = "text-align: center";>
+
+UUID:`r id_generation`
+
+</p>
+```
